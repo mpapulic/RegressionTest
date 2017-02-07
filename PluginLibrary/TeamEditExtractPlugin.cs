@@ -1,62 +1,63 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using HtmlAgilityPack;
 using Microsoft.VisualStudio.TestTools.WebTesting;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using RegressionTest.Helper;
+using RegressionTest.Models;
 
 namespace PluginLibrary
 {
-    class TeamEditExtractPlugin : ExtractionRule
+    [DisplayName("Extract Value From Column In Table Teams")]
+    [Description("Grabs a ID value from team table.")]
+    public class TeamEditExtractPlugin : ExtractionRule
     {
-        /// Specify a name for use in the user interface.
-        /// The user sees this name in the Add Extraction dialog box.
-        //---------------------------------------------------------------------
-        public override string RuleName
-        {
-            get { return "Definisanje imena metode za ekstrakciju"; }
-        }
 
-        /// Specify a description for use in the user interface.
-        /// The user sees this description in the Add Extraction dialog box.
-        //---------------------------------------------------------------------
-        public override string RuleDescription
-        {
-            get { return "Peuzimanje podataka iz liste Team"; }
-        }
+        [DisplayName("Team name ")]
+        [Description("The name of the team added in the previous step:")]
+        public string TeamName { get; set; }
 
-        // The name of the desired input field
-        private string NameValue;
-        public string Name
-        {
-            get { return NameValue; }
-            set { NameValue = value; }
-        }
+        [DisplayName("Team ID ")]
+        [Description("The ID of the team added in the previous step:")]
+        public string TeamID { get; set; }
 
-
-        private string regularexpression;
-        public string MyRegularExpression
-        {
-            get
-            {
-                return this.regularexpression;
-            }
-            set
-            {
-                this.regularexpression = value;
-            }
-        }
         public override void Extract(object sender, ExtractionEventArgs e)
         {
-            List<String> lst = new List<String>();
-            Regex rg = new Regex(MyRegularExpression);
-            MatchCollection mcoll = rg.Matches(e.Response.BodyString, 0);
-            for (int i = 0; i < mcoll.Count; i++)
+            if (String.IsNullOrWhiteSpace(TeamName) == true)
             {
-                lst.Add(mcoll[i].ToString());
+                Fail(e, "Team name does not have a valid value.");
             }
-            e.WebTest.Context.Add(this.ContextParameterName, lst);
+            else
+            {
+
+                //e.WebTest.Context.Add("NewTeam", "234");
+                GrabValue(e);
+            }
+        }
+        private void GrabValue(ExtractionEventArgs e)
+        {
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(e.Response.BodyString);
+
+
+            TeamID = TeamsProcessing.GetTeamByName(doc, TeamName);
+            //System.IO.File.WriteAllText(@"C:\Temp\TestPARAMETRI.txt", $"Team name: {TeamName}  team ID : {TeamID} .");
+            //e.WebTest.Context.Add(ContextParameterName, "Pretraga se vrsi za:" + TeamName);
+            //e.WebTest.Context.Add(ContextParameterName, "Odabrani team WEBTEST 002 ima ID:" + TeamID);
+
+            e.WebTest.Context.Add("NewTeam", TeamID);
+                //GrabValue(e, table);
+        }
+
+        private void Fail(ExtractionEventArgs e, string message)
+        {
+            e.Success = false;
+            e.Message = message;
+            e.WebTest.Context.Add(ContextParameterName, "(FAIL)");
         }
     }
 }

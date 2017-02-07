@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WebTest Name="WebTest1" Id="d0117451-8142-4928-ac2b-2e3c3ee62118" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.6f1a382c-e2a0-482b-8d7e-82621a9af18a.rec.webtestresult" ResultsLocale="">
+<WebTest Name="AdministrationTeamCRUD" Id="d0117451-8142-4928-ac2b-2e3c3ee62118" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.6f1a382c-e2a0-482b-8d7e-82621a9af18a.rec.webtestresult" ResultsLocale="">
   <Items>
     <Request Method="GET" Guid="8df365ea-1ad4-44e8-8664-eec2a72ee700" Version="1.1" Url="{{WebServer1}}/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="" IgnoreHttpStatusCode="False">
       <ExtractionRules>
@@ -48,40 +48,51 @@
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Admin/Group/Create" />
       </Headers>
-      <FormPostHttpBody>
-        <FormPostParameter Name="Name" Value="WEBTEST TEAM" RecordedValue="WEBTEST TEAM" CorrelationBinding="" UrlEncode="True" />
-      </FormPostHttpBody>
-    </Request>
-    <Request Method="GET" Guid="f0a31f1b-9c61-498d-a810-03b23725206c" Version="1.1" Url="{{WebServer1}}/Admin/Group/Edit/237" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
-      <Headers>
-        <Header Name="Referer" Value="{{WebServer1}}/Admin/Group" />
-      </Headers>
       <ExtractionRules>
-        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+        <ExtractionRule Classname="PluginLibrary.TeamEditExtractPlugin, PluginLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" VariableName="NewTeam" DisplayName="Extract Value From Column In Table Teams" Description="Grabs a ID value from team table.">
           <RuleParameters>
-            <RuleParameter Name="Required" Value="True" />
-            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="TeamName" Value="{{TEAM NAME}}" />
+            <RuleParameter Name="TeamID" Value="" />
           </RuleParameters>
         </ExtractionRule>
       </ExtractionRules>
-    </Request>
-    <Request Method="POST" Guid="595ab208-b4b7-4f9e-93aa-df09b58ca1cb" Version="1.1" Url="{{WebServer1}}/Admin/Group/Edit/237" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Admin/Group" ReportingName="" IgnoreHttpStatusCode="False">
-      <Headers>
-        <Header Name="Referer" Value="{{WebServer1}}/Admin/Group/Edit/237" />
-      </Headers>
       <FormPostHttpBody>
-        <FormPostParameter Name="Id" Value="{{$HIDDEN1.Id}}" RecordedValue="237" CorrelationBinding="" UrlEncode="True" />
-        <FormPostParameter Name="Name" Value="WEBTEST TEAM - EDIT" RecordedValue="WEBTEST TEAM - EDIT" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Name" Value="{{TEAM NAME}}" RecordedValue="WEBTEST TEAM" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="GET" Guid="e2d75e1e-cdd4-4af5-bd6f-3dab2c39e22c" Version="1.1" Url="{{WebServer1}}/Admin/Group/Delete/237" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Admin/Group" ReportingName="" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="f0a31f1b-9c61-498d-a810-03b23725206c" Version="1.1" Url="{{WebServer1}}/Admin/Group/Edit/{{NewTeam}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Admin/Group" />
       </Headers>
+    </Request>
+    <Request Method="POST" Guid="595ab208-b4b7-4f9e-93aa-df09b58ca1cb" Version="1.1" Url="{{WebServer1}}/Admin/Group/Edit/{{NewTeam}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Admin/Group" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Admin/Group/Edit/{{NewTeam}}" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Id" Value="{{NewTeam}}" RecordedValue="237" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Name" Value="{{TEAM NAME}}- EDIT" RecordedValue="WEBTEST TEAM - EDIT" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="e2d75e1e-cdd4-4af5-bd6f-3dab2c39e22c" Version="1.1" Url="{{WebServer1}}/Admin/Group/Delete/{{NewTeam}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Admin/Group" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Admin/Group" />
+      </Headers>
+      <ValidationRules>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="{{TEAM NAME}}" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="False" />
+          </RuleParameters>
+        </ValidationRule>
+      </ValidationRules>
     </Request>
   </Items>
   <ContextParameters>
     <ContextParameter Name="WebServer1" Value="http://oyezgateway.test.gowi.rs" />
+    <ContextParameter Name="TEAM NAME" Value="WEB TEST X0001" />
   </ContextParameters>
   <ValidationRules>
     <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
