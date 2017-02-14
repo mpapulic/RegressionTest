@@ -17,12 +17,12 @@ namespace PluginLibrary
     public class UserEditExtractPlugin : ExtractionRule
     {
 
-        [DisplayName("User mail ")]
+        [DisplayName("UserMail")]
         [Description("The mail of the user added in the previous step:")]
         public string UserMail { get; set; }
 
-        [DisplayName("User GUID ")]
-        [Description("The GUID of the user added in the previous step:")]
+        //[DisplayName("UserGUID")]
+        //[Description("The GUID of the user added in the previous step:")]
         public string UserGUID { get; set; }
 
         public override void Extract(object sender, ExtractionEventArgs e)
@@ -35,7 +35,7 @@ namespace PluginLibrary
             {
 
                 //e.WebTest.Context.Add("NewUser", "234");
-                System.IO.File.WriteAllText(@"C:\Temp\TestRESPONSE.txt", "Usao u extraction rule, STEP 1");
+                //System.IO.File.WriteAllText(@"C:\Temp\TestRESPONSE.txt", "Usao u extraction rule, STEP 1");
                 GrabValue(e);
             }
         }
@@ -43,12 +43,12 @@ namespace PluginLibrary
         {
 
             string textJson = e.Response.BodyString;
-                
+            string userMail = e.WebTest.Context["email"].ToString() ;
             UserGUID = UsersProcessing.GetUserByMail(textJson, UserMail);
 
             System.IO.File.WriteAllText(@"C:\Temp\TestUserGUID.txt", UserGUID);
 
-            e.WebTest.Context.Add("NewUser", UserGUID);
+            e.WebTest.Context.Add("UserGUID", UserGUID);
             //GrabValue(e, table);
         }
 
