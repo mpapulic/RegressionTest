@@ -23,7 +23,7 @@ namespace PluginLibrary
 
         //[DisplayName("UserGUID")]
         //[Description("The GUID of the user added in the previous step:")]
-        public string UserGUID { get; set; }
+        //public string UserGUID { get; set; }
 
         public override void Extract(object sender, ExtractionEventArgs e)
         {
@@ -36,6 +36,7 @@ namespace PluginLibrary
 
                 //e.WebTest.Context.Add("NewUser", "234");
                 //System.IO.File.WriteAllText(@"C:\Temp\TestRESPONSE.txt", "Usao u extraction rule, STEP 1");
+                System.IO.File.WriteAllText(@"C:\Temp\TestExtract.txt", "Usao u EXTRACT metodu i zovem GrabValue(e)");
                 GrabValue(e);
             }
         }
@@ -43,12 +44,13 @@ namespace PluginLibrary
         {
 
             string textJson = e.Response.BodyString;
-            string userMail = e.WebTest.Context["email"].ToString() ;
-            UserGUID = UsersProcessing.GetUserByMail(textJson, UserMail);
+            string userMail = e.WebTest.Context["newUserMail"].ToString() ;
+            System.IO.File.WriteAllText(@"C:\Temp\TestGrabValue.txt", "Usao u GrabValue i pozivam GetUserByMail"+ "JSON kao text:" + textJson + "/r a trazi se mail:" + UserMail);
+            string userGUID = UsersProcessing.GetUserByMail(textJson, UserMail);
+            System.IO.File.WriteAllText(@"C:\Temp\TestGrabValueIzlaz.txt", "Izlaz iz GrabValue i  GetUserByMail vratio:" + userGUID);
 
-            System.IO.File.WriteAllText(@"C:\Temp\TestUserGUID.txt", UserGUID);
 
-            e.WebTest.Context.Add("UserGUID", UserGUID);
+            e.WebTest.Context.Add("UserGUID", userGUID);
             //GrabValue(e, table);
         }
 
