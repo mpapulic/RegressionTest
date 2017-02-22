@@ -55,10 +55,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AdministrationPreferencesCertificateAtPoint-FALSE.webtest">
+    <None Include="AdministrationPreferencesCertificateAtPoint-FALSE.webtest" />
+    <None Include="AdministrationPreferencesCertificateAtPoint-TRUE.webtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AdministrationPreferencesCertificateAtPoint-TRUE.webtest">
+    <None Include="AdministrationPreferencesRedactionStatement.webtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="LoginSucess.webtest">
@@ -87,6 +88,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="AdministrationUserCRUD.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="UploadedFile\DEED OF CHARGE.pdf" />
+    <None Include="AdministrationPreferencesUrgentDay.webtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

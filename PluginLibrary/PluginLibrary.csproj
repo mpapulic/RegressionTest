@@ -49,10 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckUrgentPlugIn.cs" />
+    <Compile Include="Helper\CheckUrgent.cs" />
     <Compile Include="Helper\TeamsProcessing.cs" />
     <Compile Include="Helper\UsersProcessing.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="ChargeDatePlugin.cs" />
     <Compile Include="TeamEditExtractPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserEditExtractPlugin.cs" />
