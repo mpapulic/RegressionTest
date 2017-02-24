@@ -32,11 +32,11 @@ namespace RegressionTest
         public override IEnumerator<WebTestRequest> GetRequestEnumerator()
         {
             // Initialize validation rules that apply to all requests in the WebTest
-            if ((this.Context.ValidationLevel >= Microsoft.VisualStudio.TestTools.WebTesting.ValidationLevel.Low))
-            {
-                ValidateResponseUrl validationRule1 = new ValidateResponseUrl();
-                this.ValidateResponse += new EventHandler<ValidationEventArgs>(validationRule1.Validate);
-            }
+            //if ((this.Context.ValidationLevel >= Microsoft.VisualStudio.TestTools.WebTesting.ValidationLevel.Low))
+            //{
+            //    ValidateResponseUrl validationRule1 = new ValidateResponseUrl();
+            //    this.ValidateResponse += new EventHandler<ValidationEventArgs>(validationRule1.Validate);
+            //}
             if ((this.Context.ValidationLevel >= Microsoft.VisualStudio.TestTools.WebTesting.ValidationLevel.Low))
             {
                 ValidationRuleResponseTimeGoal validationRule2 = new ValidationRuleResponseTimeGoal();
