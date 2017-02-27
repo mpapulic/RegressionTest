@@ -6,9 +6,9 @@ using System.Net;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RegressionTest.Models;
+using PluginLibrary.Models;
 
-namespace RegressionTest.Helper
+namespace PluginLibrary.Helper
 {
     public static class TeamsProcessing
     {

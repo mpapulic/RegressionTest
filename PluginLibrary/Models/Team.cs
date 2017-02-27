@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RegressionTest.Models
+namespace PluginLibrary.Models
 {
     public class Team
     {

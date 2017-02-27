@@ -58,6 +58,7 @@
     <Compile Include="AdministrationPreferencesVeryUrgentDay.cs" />
     <Compile Include="AdministrationTeamCRUDCoded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebTest1Coded.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AdministrationPreferencesCertificateAtPoint-FALSE.webtest" />
@@ -67,10 +68,22 @@
     <None Include="AdministrationPreferencesRedactionStatement.webtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="MyDashboardOptional.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboardRestrictedByDefault.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboardRestrictedOnly.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="WebTest1.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="WebTestExamplePreferencesUrgentDay.webtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="LoadTest1.loadtest">
+    <None Include="Administration-RegressionTest.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="LoginSucess.webtest">
