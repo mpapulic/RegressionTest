@@ -13,7 +13,7 @@ namespace PluginLibrary.Helper
 {
     public static class GetSubmissions_HTML
     {
-        public static string GetSubmissionByTitle(HtmlDocument doc, string _title)
+        public static string GetSubmissionByTitle(HtmlAgilityPack.HtmlDocument doc, string _title)
         {
 
             string _submissionID = "";
@@ -29,18 +29,6 @@ namespace PluginLibrary.Helper
         }
         public static List<GlobalSubmissionListRow> GetAllSubmissions(HtmlAgilityPack.HtmlDocument doc, string _tableID)
         {
-            // LOS DEBUG SISTEM
-            // Create a file to write to.
-            using (StreamWriter sw = File.CreateText(@"C:\Temp\GLS.txt"))
-            {
-                sw.WriteLine(doc.DocumentNode.OuterHtml);
-                sw.WriteLine("");
-                sw.WriteLine($"POCETAK UPISA sa proverom : ");
-                sw.WriteLine("=>");
-            }
-            // KAJ LOSEG DEBUGA KOJI PROVJERAVA DA LI JE DOKUMENT UZET
-
-
             // list of the TEAMs on the page
             List<GlobalSubmissionListRow> list = new List<GlobalSubmissionListRow>();
 
@@ -57,7 +45,13 @@ namespace PluginLibrary.Helper
             foreach (var TABLE in nodesTable)
             {
                 // petrazuje se samo trazena tabela na celoj HTML stranici, ili sve ako je _tableID prazan string
-               if (TABLE.Id.ToString() == _tableID || _tableID == "")
+                using (StreamWriter sw = File.CreateText(@"C:\Temp\GLS-table.txt"))
+                {
+                    sw.WriteLine(TABLE.OuterHtml);
+                    sw.WriteLine("");
+                    sw.WriteLine($"Tabela koja se obradjuje je : {_tableID } ");
+                }
+                if (TABLE.Id.ToString() == _tableID || _tableID == "")
                {
 
                     HtmlNodeCollection nodesRows = TABLE.SelectNodes($"//table[{k}]//tr");
@@ -128,19 +122,19 @@ namespace PluginLibrary.Helper
 
                                 });
                                 // LOS DEBUG
-                                using (StreamWriter sw = File.AppendText(@"C:\Temp\TestTeam.txt"))
-                                {
-                                    sw.WriteLine($"{j}/{nodesRows.Count} =>  Title:{ fields[0] }  GUID:{ fields[9]}  status: { fields[10]}");
-                                }
+                                //using (StreamWriter sw = File.AppendText(@"C:\Temp\TestTeam.txt"))
+                                //{
+                                //    sw.WriteLine($"{j}/{nodesRows.Count} =>  Title:{ fields[0] }  GUID:{ fields[9]}  status: { fields[10]}");
+                                //}
                                 // END LOS DEBUG
                             }
                             else
                             {
                                 // headers of the columns
-                                using (StreamWriter sw = File.AppendText(@"C:\Temp\TestGLSheader.txt"))
-                                {
-                                    sw.WriteLine($"{j}/{nodesRows.Count} =>  ovaj se nije obradio jer je nodesCell == null ");
-                                }
+                                //using (StreamWriter sw = File.AppendText(@"C:\Temp\TestGLSheader.txt"))
+                                //{
+                                //    sw.WriteLine($"{j}/{nodesRows.Count} =>  ovaj se nije obradio jer je nodesCell == null ");
+                                //}
                                 HtmlNodeCollection nodesHeaders = ROW.SelectNodes($"//tr[{j}]//th");
                                 if (nodesHeaders != null)
                                 {

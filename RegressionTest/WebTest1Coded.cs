@@ -16,6 +16,7 @@ namespace RegressionTest
     using Microsoft.VisualStudio.TestTools.WebTesting;
     using Microsoft.VisualStudio.TestTools.WebTesting.Rules;
     using PluginLibrary;
+    using PluginLibrary.Validate;
 
 
     public class WebTest1Coded : WebTest
@@ -24,7 +25,8 @@ namespace RegressionTest
         public WebTest1Coded()
         {
             this.Context.Add("WebServer1", "http://oyezgateway.test.gowi.rs");
-            this.Context.Add("User", "");
+            this.Context.Add("FirstName", "");
+            this.Context.Add("LastName", "");
             this.PreAuthenticate = true;
             this.Proxy = "default";
         }
@@ -149,6 +151,11 @@ namespace RegressionTest
 
             WebTestRequest request7 = new WebTestRequest((this.Context["WebServer1"].ToString() + "/Dashboard/Index"));
             request7.Headers.Add(new WebTestRequestHeader("Referer", (this.Context["WebServer1"].ToString() + "/Submission/Index")));
+            if ((this.Context.ValidationLevel >= Microsoft.VisualStudio.TestTools.WebTesting.ValidationLevel.High))
+            {
+                MyDashboardCheckPanelData validationRule3 = new MyDashboardCheckPanelData();
+                request7.ValidateResponse += new EventHandler<ValidationEventArgs>(validationRule3.Validate);
+            }
             yield return request7;
             request7 = null;
 

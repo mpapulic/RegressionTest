@@ -7,9 +7,6 @@ using Microsoft.VisualStudio.TestTools.WebTesting;
 
 
 
-namespace RuleExamples
-
-{
     namespace PluginLibrary
     {
         public class ValidateFormFieldExists : ValidationRule
@@ -50,5 +47,5 @@ namespace RuleExamples
         }
 
     }
-}
+
 

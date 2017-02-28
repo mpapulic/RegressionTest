@@ -213,6 +213,13 @@
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Submission/Index" />
       </Headers>
+      <ValidationRules>
+        <ValidationRule Classname="RuleExamples.PluginLibrary.MyDashboardCheckPanelData, PluginLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DisplayName="MyDashboardCheckPanelData" Description="" Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="0 table" />
+          </RuleParameters>
+        </ValidationRule>
+      </ValidationRules>
     </Request>
     <Request Method="GET" Guid="32d6b981-5ccb-4c4e-a006-a678a9dedc8b" Version="1.1" Url="{{WebServer1}}/Account/Logout" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="" IgnoreHttpStatusCode="False">
       <Headers>
@@ -222,7 +229,6 @@
   </Items>
   <ContextParameters>
     <ContextParameter Name="WebServer1" Value="http://oyezgateway.test.gowi.rs" />
-    <ContextParameter Name="User" Value="" />
   </ContextParameters>
   <ValidationRules>
     <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
