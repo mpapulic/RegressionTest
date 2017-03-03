@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PluginLibrary.Models
 {
-    public class GlobalSubmissionListRow
+    public class Submission
     {
         public string Title { get; set; }
         public string Type { get; set; }

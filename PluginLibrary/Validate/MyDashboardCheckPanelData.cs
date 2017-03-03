@@ -20,21 +20,18 @@ namespace PluginLibrary.Validate
             get { return table_name; }
             set { table_name = value; }
         }
-        private List<GlobalSubmissionListRow> GLSsubmissions = new List<GlobalSubmissionListRow>();
-        private List<GlobalSubmissionListRow> MyDashboard_0_submissions = new List<GlobalSubmissionListRow>();
-        private List<GlobalSubmissionListRow> MyDashboard_1_submissions = new List<GlobalSubmissionListRow>();
-        private List<GlobalSubmissionListRow> MyDashboard_2_submissions = new List<GlobalSubmissionListRow>();
-        private List<GlobalSubmissionListRow> MyDashboard_3_submissions = new List<GlobalSubmissionListRow>();
-        private string _userName;
-
         public override void Validate(object sender, ValidationEventArgs e)
         {
+            // podaci o tekucem korisniku sistema
+            string _userName;
             _userName = e.WebTest.Context["FirstName"] + " " + e.WebTest.Context["LastName"];
-            //using (StreamWriter sw = File.AppendText(@"C:\Temp\VALIDATE.txt"))
-            //{
-            //    sw.WriteLine($" VALIDATE TEKUCEG USERA:{_userName} ");
-            //}
-            if (CompareTable(e.Response, table_name, _userName))
+
+            // html podatak dobijen extakcijom kada je obradjivana Global submission lista
+            string _GLSHtmlDoc;
+            _GLSHtmlDoc = e.WebTest.Context["GLSsubmissionsHTMLdoc"].ToString();
+
+            TableName = "0 table";
+            if (CompareTable(e.Response, table_name, _userName, _GLSHtmlDoc))
             {
                 e.IsValid = true;
             }
@@ -46,53 +43,90 @@ namespace PluginLibrary.Validate
             }
         }
 
-        private bool CompareTable(WebTestResponse response, string _tablename, string _userName)
+        private bool CompareTable(WebTestResponse response, string _tablename, string _userName, string _GLSHtmlString)
         {
             bool isValid = false;
-            string htmlDoc = response.HtmlDocument.ToString();
+            
+            // kreiranje HTML dokumenta za Global submission list
+            HtmlAgilityPack.HtmlDocument GLSHtmlDoc = new HtmlAgilityPack.HtmlDocument();
+            GLSHtmlDoc.LoadHtml(_GLSHtmlString);
+            
+            // obrada HTML dokumenta iz GLS i pretvaranje u listu submissiona
+            List<Submission> GLSsubmissions = new List<Submission>();
+            GLSsubmissions = GetGLSSubmissions.GetAllSubmissions(GLSHtmlDoc);
+            
+            // obrada MyDashboard HTML responsa
+            string htmlDoc = response.BodyString;
+            //using (StreamWriter sw = File.AppendText(@"C:\Temp\CompareTable.txt"))
+            //    sw.WriteLine($"MYDASHBOARD submissions idu sa sledecim HTML stringom: {htmlDoc}");
+
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(htmlDoc);
-            using (StreamWriter sw = File.AppendText(@"C:\Temp\PRE_GLOBALSUBMISSIONLIST.txt"))
-            {
-                sw.WriteLine($" GLOBAL SUBMISSION LIST {htmlDoc} ");
-            }
-            GLSsubmissions = GetSubmissions_HTML.GetAllSubmissions(doc, "");
-            using (StreamWriter sw = File.AppendText(@"C:\Temp\POSLE_GLOBALSUBMISSIONLIST.txt"))
-            {
-                sw.WriteLine($" GLOBAL SUBMISSION LIST  /r/n {GLSsubmissions.Count.ToString()} ");
-            }
             switch (_tablename)
             {
                 // My Submissions
                 case "0 table":
-                    MyDashboard_0_submissions = GetSubmissions_HTML.GetAllSubmissions(doc, _tablename);
-                    //using (StreamWriter sw = File.AppendText(@"C:\Temp\MYDASHBOARD.txt"))
-                    //{
-                    //    sw.WriteLine($" MYDASHBOARD tekuceg usera :{_userName} /r/n {MyDashboard_0_submissions.ToString()} ");
-                    //}
-                    // provera da li su svi submissioni iz GLS za tekuceg usera u tabeli MyDashboard
-                    var CurrentUserSubmissionsGLS = GLSsubmissions.FindAll(i => i.CreatedBy == _userName);
-                    //using (StreamWriter sw = File.AppendText(@"C:\Temp\Tekuci user.txt"))
-                    //{
-                    //    sw.WriteLine($" FILTER submissiona na tekuceg usera :{_userName} /r/n {CurrentUserSubmissionsGLS.ToString()} ");
-                    //}
-                    var firstNotSecond = CurrentUserSubmissionsGLS.Except(MyDashboard_0_submissions).ToList();
-                    var secondNotFirst = MyDashboard_0_submissions.Except(CurrentUserSubmissionsGLS).ToList();
-                    if (firstNotSecond.Count == 0 && secondNotFirst.Count == 0)
-                        isValid = true;
+                    //List<GlobalSubmissionListRow> MyDashboard_0_submissions = new List<GlobalSubmissionListRow>();
+                    var MyDashboard_0_submissions = GetMyDashboardSubmissions.GetAllSubmissions(doc, _tablename);
+                    // nepotrebne pretumbacije ali u ovom trenutku resenje
+                    // naime kada uzimam submissione iz GLS , uzimam sa svim atributima, kada uzimam submissione sa MyDashboard stranice uzimam samo sa GUID i Title
+                    // u narednim redovima to pretvaram u Liste s istim tipom podataka da bih  ih mogao uporediti
+                    using (StreamWriter sw = File.AppendText(@"C:\Temp\POREDJENJE.txt"))
+                    {
+                        Logger.Log($"Lista submissiona na GLS ulazna : ", sw);
+                        foreach (var item in GLSsubmissions)
+                        {
+                            Logger.Log($"{item.Title} - {item.SubmissionGUID} - [{item.CreatedBy}]", sw);
+
+                        }
+
+                        Logger.Log($"Lista submissiona na GLS preciscena za tekuceg usear: [{_userName}] ", sw);
+                        var CurrentUserSubmissionsGLS = GLSsubmissions.FindAll(i => i.CreatedBy == _userName);
+                        Logger.Log($"Lista submissiona na GLS preciscena za tekuceg usear: ", sw);
+                        foreach (var item in CurrentUserSubmissionsGLS)
+                        {
+                            Logger.Log($"{item.Title} - {item.SubmissionGUID}", sw);
+                        }
+
+                        var GLSguid_title = CurrentUserSubmissionsGLS.AsEnumerable()
+                          .Select(x =>
+                             new { Title = x.Title, GUID = x.SubmissionGUID })
+                          .ToList();
+                        Logger.Log($"Lista submissiona na GLS preciscena za tekuceg usear - PREBACENA U LISTU: ", sw);
+                        foreach (var item in GLSguid_title)
+                        {
+                            Logger.Log($"{item.Title} - {item.GUID}", sw);
+                        }
+
+
+                        var MyDashboard = MyDashboard_0_submissions.AsEnumerable()
+                          .Select(x =>
+                             new { Title = x.Title, GUID = x.SubmissionGUID })
+                          .ToList();
+                        Logger.Log($"Lista submissiona za tekuceg usera na MYDASHBOARD : ", sw);
+                        foreach (var item in MyDashboard)
+                        {
+                            Logger.Log($"{item.Title} - {item.GUID}", sw);
+
+                        }
+                        var firstNotSecond = GLSguid_title.Except(MyDashboard).ToList();
+                        var secondNotFirst = MyDashboard.Except(GLSguid_title).ToList();
+                        if (firstNotSecond.Count == 0 && secondNotFirst.Count == 0)
+                            isValid = true;
+                    }
                 
                     break;
                 // Other submission I can approve
                 case "1 table":
-                    MyDashboard_0_submissions = GetSubmissions_HTML.GetAllSubmissions(doc, _tablename);
+                    //var MyDashboard_1_submissions = GetSubmissions_HTML.GetAllSubmissions(doc, _tablename);
                     break;
                 // Submission I can submit
                 case "2 table":
-                    MyDashboard_0_submissions = GetSubmissions_HTML.GetAllSubmissions(doc, _tablename);
+                    //var MyDashboard_2_submissions = GetSubmissions_HTML.GetAllSubmissions(doc, _tablename);
                     break;
                 // Submission I have submitted
                 case "3 table":
-                    MyDashboard_0_submissions = GetSubmissions_HTML.GetAllSubmissions(doc, _tablename);
+                    //var MyDashboard_3_submissions = GetSubmissions_HTML.GetAllSubmissions(doc, _tablename);
                     break;
                 default:
                     break;

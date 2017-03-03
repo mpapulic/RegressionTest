@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using PluginLibrary.Helper;
 using PluginLibrary.Models;
+using System.IO;
 
 namespace PluginLibrary
 {
@@ -16,7 +17,7 @@ namespace PluginLibrary
     [Description("Grabs a ALL values from the  GLOBAL SUBMISSION LIST.")]
     public class SubmissionsExtractGlobalSubmissionListPlugin : ExtractionRule
     {
-        public List<GlobalSubmissionListRow> GLSsubmissions = new List<GlobalSubmissionListRow>();
+        public List<Submission> GLSsubmissions = new List<Submission>();
 
         public override void Extract(object sender, ExtractionEventArgs e)
         {
@@ -35,15 +36,13 @@ namespace PluginLibrary
         {
             var doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(e.Response.BodyString);
-            string tableID = "0 table";
-            GLSsubmissions = GetSubmissions_HTML.GetAllSubmissions(doc, tableID);
-            //SubmissionGUID = GetSubmissions_HTML.GetSubmissionByTitle(doc, SubmissionTitle);
-            //System.IO.File.WriteAllText(@"C:\Temp\TestPARAMETRI.txt", $"Team name: {TeamName}  team ID : {TeamID} .");
-            //e.WebTest.Context.Add(ContextParameterName, "Pretraga se vrsi za:" + TeamName);
-            //e.WebTest.Context.Add(ContextParameterName, "Odabrani team WEBTEST 002 ima ID:" + TeamID);
+            //using (StreamWriter sw = File.AppendText(@"C:\Temp\Extract.txt"))
+            //{
+            //    sw.WriteLine($"GLS html  : {doc.ToString()}  ");
+            //    sw.WriteLine($"GLS html iz bodystringa   : {e.Response.BodyString}  ");
+            //}
 
-            e.WebTest.Context.Add("GLSsubmissions", GLSsubmissions);
-            //GrabValue(e, table);
+            e.WebTest.Context.Add("GLSsubmissionsHTMLdoc", e.Response.BodyString);
         }
 
         private void Fail(ExtractionEventArgs e, string message)

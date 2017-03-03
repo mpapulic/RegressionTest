@@ -61,7 +61,7 @@
     <Compile Include="AdministrationPreferencesVeryUrgentDay.cs" />
     <Compile Include="AdministrationTeamCRUDCoded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebTest1Coded.cs" />
+    <Compile Include="MyDashboardMySubmissions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AdministrationPreferencesCertificateAtPoint-FALSE.webtest" />

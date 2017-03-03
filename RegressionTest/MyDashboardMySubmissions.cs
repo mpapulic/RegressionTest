@@ -17,12 +17,12 @@ namespace RegressionTest
     using Microsoft.VisualStudio.TestTools.WebTesting.Rules;
     using PluginLibrary;
     using PluginLibrary.Validate;
+    using PluginLibrary.Models;
 
-
-    public class WebTest1Coded : WebTest
+    public class MyDashboardMySubmissions : WebTest
     {
-
-        public WebTest1Coded()
+        //public List<GlobalSubmissionListRow> GLSsubmissionList = new List<GlobalSubmissionListRow>();
+        public MyDashboardMySubmissions()
         {
             this.Context.Add("WebServer1", "http://oyezgateway.test.gowi.rs");
             this.Context.Add("FirstName", "");
@@ -135,7 +135,7 @@ namespace RegressionTest
             request5Body.FormPostParameters.Add("IsDateFromCreated", "true");
             request5Body.FormPostParameters.Add("IsDateFromCreated", this.Context["$HIDDEN1.IsDateFromCreated"].ToString());
             request5Body.FormPostParameters.Add("SortApproversBy", "2");
-            request5Body.FormPostParameters.Add("RestrictedAccessStatus", "1");
+            request5Body.FormPostParameters.Add("RestrictedAccessStatus", "0");
             request5Body.FormPostParameters.Add("IsPdfLimit", this.Context["$HIDDEN1.IsPdfLimit"].ToString());
             request5.Body = request5Body;
             yield return request5;

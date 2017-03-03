@@ -51,10 +51,12 @@
   <ItemGroup>
     <Compile Include="CheckUrgentPlugIn.cs" />
     <Compile Include="Extract\SubmissionsExtractGlobalSubmissionListPlugin.cs" />
-    <Compile Include="Helper\GetSubmissions_HTML.cs" />
+    <Compile Include="Helper\GetGLSSubmissions.cs" />
+    <Compile Include="Helper\GetMyDashboardSubmissions.cs" />
+    <Compile Include="Helper\Logger.cs" />
     <Compile Include="Helper\TeamsProcessing.cs" />
     <Compile Include="Helper\UsersProcessing.cs" />
-    <Compile Include="Models\GlobalSubmissionListRow.cs" />
+    <Compile Include="Models\Submission.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ChargeDatePlugin.cs" />
