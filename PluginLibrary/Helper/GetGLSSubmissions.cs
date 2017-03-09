@@ -25,44 +25,51 @@ namespace PluginLibrary.Helper
                 _submissionID = listSubmissions[index].SubmissionGUID;
             return _submissionID;
         }
+        public static string GetGLSSubmissionTitleByStatusAndUser(HtmlAgilityPack.HtmlDocument doc, string _status, string _user)
+        {
+            string _submissionTitle = "";
+            List<Submission> listSubmissions = new List<Submission>();
+            using (StreamWriter sw = File.AppendText(@"C:\Temp\Lista submission GLS.txt"))
+            {
+                listSubmissions = GetAllSubmissions(doc);
+                foreach(var item in listSubmissions)
+                {
+                    sw.WriteLine($" {item.Title} - {item.Status} - {item.CreatedBy}");
+                }
+                int index = listSubmissions.FindIndex(x => x.Status.Contains(_status) && x.CreatedBy.Contains(_user));
+                if (index != -1)
+                    _submissionTitle = listSubmissions[index].Title;
+                sw.WriteLine($"Vracam title  : {_submissionTitle} ");
+            }
+            return _submissionTitle;
+        }
+        public static string GetGLSSubmissionByStatus(HtmlAgilityPack.HtmlDocument doc, string _status)
+        {
+
+            string _submissionTitle = "";
+            List<Submission> listSubmissions = new List<Submission>();
+
+            listSubmissions = GetAllSubmissions(doc);
+            using (StreamWriter sw = File.AppendText(@"C:\Temp\GetGLSSubmissionByStatus.txt"))
+            {
+                sw.WriteLine($"Pronadjenih slogova sa statusm {_status} : {listSubmissions.Count} ");
+                int index = listSubmissions.FindIndex(x => x.Status.Contains(_status));
+                // takes the first submission Title
+                if (index != -1)
+                  _submissionTitle = listSubmissions[index].Title;
+                sw.WriteLine($"Vracam title  : {_submissionTitle} ");
+            }
+            return _submissionTitle;
+        }
+
         public static List<Submission> GetAllSubmissions(HtmlAgilityPack.HtmlDocument doc)
         {
-            //using (StreamWriter sw = File.AppendText(@"C:\Temp\GetSubmissionHTML.txt"))
-            //{
-            //    sw.WriteLine($"GetSubmissionHTML ulazni parametri: ");
-            //    sw.WriteLine($"============================================================================== ");
-            //    sw.WriteLine($"Naziv tabele koja se obradjuje: {tableCondition} ");
-            //    var brojTabela = doc.DocumentNode.SelectNodes("//table");
-            //    sw.WriteLine($"Broj tabela u HTML dokumenta : {brojTabela.Count.ToString()} ");
-            //    HtmlNodeCollection trazenaTabela;
-            //    HtmlNodeCollection trazeniRedovi;
-            //    trazenaTabela = doc.DocumentNode.SelectNodes($"//table[0]");
-            //    var node = trazenaTabela[0];
-            //    sw.WriteLine($"Sadrzaj u prvoj tabeli HTML tabele : {node.OuterHtml.ToString()}");
-
-            //    if (brojTabela.Count > 0)
-            //    {
-            //        trazenaTabela = doc.DocumentNode.SelectNodes($"//table[1]");
-            //        node = trazenaTabela[1];
-            //        sw.WriteLine($"Sadrzaj u u drugoj tabeli HTML tabele : {node.OuterHtml.ToString()} ");
-            //        trazenaTabela = doc.DocumentNode.SelectNodes($"//table[2]");
-            //        node = trazenaTabela[2];
-            //        sw.WriteLine($"Sadrzaj u u trecoj tabeli HTML tabele : {node.OuterHtml.ToString()}");
-            //        trazenaTabela = doc.DocumentNode.SelectNodes($"//able[3]");
-            //        node = trazenaTabela[3];
-            //        sw.WriteLine($"Sadrzaj u u cetvrtoj tabeli HTML tabele : {node.OuterHtml.ToString()} ");
-            //    }
-            //    sw.WriteLine($"============================================================================== ");
-
-            //}
-
             // list of the Submissions on the page
             List<Submission> listSubmission = new List<Submission>();
             HtmlNode TabeleUhtml;
             string uslov;
 
-
-            using (StreamWriter sw = File.AppendText(@"C:\Temp\GLSGetSubmissions.txt"))
+            using (StreamWriter sw = File.AppendText(@"C:\Temp\GLSSubmissions.txt"))
             {
                 // searching for all tables in the HTML document
                 uslov = "//table";
@@ -126,7 +133,6 @@ namespace PluginLibrary.Helper
 
                                     rbrKolona++;
                                 }
-                                Console.WriteLine($"{rbrRed}. Title: {fields[0]} - GUID:{fields[brojKolona]} - Creator: {fields[2]}");
 
 
                                 listSubmission.Add(new Submission
@@ -143,6 +149,8 @@ namespace PluginLibrary.Helper
                                     SubmissionGUID = fields[9],
                                     UrgentType = fields[10]
                                 });
+                                sw.WriteLine($"{rbrRed}. Title: {fields[0]} - GUID:{fields[brojKolona]} - Status: {fields[7]}");
+
                                 rbrRed++;
                             }
                         }

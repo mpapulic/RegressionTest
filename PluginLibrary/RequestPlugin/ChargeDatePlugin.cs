@@ -28,6 +28,7 @@ namespace PluginLibrary
             e.WebTest.Context.Add("ChargeDateDay", chargeDate.Day);
             e.WebTest.Context.Add("ChargeDateMonth", chargeDate.Month);
             e.WebTest.Context.Add("ChargeDateYear", chargeDate.Year);
+            e.WebTest.Context.Add("ChargeDate", chargeDate);
             System.IO.File.WriteAllText(@"C:\Temp\ChargeDatePlugin.txt", $"Usao u ChargeDatePlugin days in past: {daysInPast}  ChargeDate : {chargeDate} .");
         }
     }

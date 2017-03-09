@@ -61,7 +61,6 @@
     <Compile Include="AdministrationPreferencesVeryUrgentDay.cs" />
     <Compile Include="AdministrationTeamCRUDCoded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MyDashboardMySubmissions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AdministrationPreferencesCertificateAtPoint-FALSE.webtest" />
@@ -69,6 +68,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="AdministrationPreferencesRedactionStatement.webtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboard.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboard AlertsDeadlinePassed.webtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboard AlertsDeadlineVeryUrgent.webtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="MyDashboardOptional.webtest">
@@ -80,10 +88,28 @@
     <None Include="MyDashboardRestrictedOnly.webtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="WebTest1.webtest">
+    <None Include="MyDashboard AlertsDeadlineUrgent.webtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="WebTestExamplePreferencesUrgentDay.webtest">
+    <None Include="MyDashboard AlertsRejected By CH.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboard AlertsReviewed.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboard AlertsWaiting CH.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboard AlertsSubmitted.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboard AlertsDrafted.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MyDashboardMySubmissions.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="WebTestBasePreferencesUrgentDay.webtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Administration-RegressionTest.loadtest">

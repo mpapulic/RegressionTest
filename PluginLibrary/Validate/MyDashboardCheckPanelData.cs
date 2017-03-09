@@ -24,7 +24,7 @@ namespace PluginLibrary.Validate
         {
             // podaci o tekucem korisniku sistema
             string _userName;
-            _userName = e.WebTest.Context["FirstName"] + " " + e.WebTest.Context["LastName"];
+            _userName = e.WebTest.Context["CurrentUser"].ToString();
 
             // html podatak dobijen extakcijom kada je obradjivana Global submission lista
             string _GLSHtmlDoc;
