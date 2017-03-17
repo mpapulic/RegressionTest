@@ -37,14 +37,15 @@ namespace RegressionTest
             //    ValidateResponseUrl validationRule1 = new ValidateResponseUrl();
             //    this.ValidateResponse += new EventHandler<ValidationEventArgs>(validationRule1.Validate);
             //}
-            if ((this.Context.ValidationLevel >= Microsoft.VisualStudio.TestTools.WebTesting.ValidationLevel.Low))
-            {
-                ValidationRuleResponseTimeGoal validationRule2 = new ValidationRuleResponseTimeGoal();
-                validationRule2.Tolerance = 0D;
-                this.ValidateResponseOnPageComplete += new EventHandler<ValidationEventArgs>(validationRule2.Validate);
-            }
+            //if ((this.Context.ValidationLevel >= Microsoft.VisualStudio.TestTools.WebTesting.ValidationLevel.Low))
+            //{
+            //    ValidationRuleResponseTimeGoal validationRule2 = new ValidationRuleResponseTimeGoal();
+            //    validationRule2.Tolerance = 0D;
+            //    this.ValidateResponseOnPageComplete += new EventHandler<ValidationEventArgs>(validationRule2.Validate);
+            //}
 
             WebTestRequest request1 = new WebTestRequest((this.Context["WebServer1"].ToString() + "/"));
+            request1.ReportingName = "Home";
             request1.ExpectedResponseUrl = (this.Context["WebServer1"].ToString() + "/Account/Login");
             ExtractHiddenFields extractionRule1 = new ExtractHiddenFields();
             extractionRule1.Required = true;
@@ -55,6 +56,7 @@ namespace RegressionTest
             request1 = null;
 
             WebTestRequest request2 = new WebTestRequest((this.Context["WebServer1"].ToString() + "/Account/Login"));
+            request2.ReportingName = "Login";
             request2.Method = "POST";
             request2.ExpectedResponseUrl = (this.Context["WebServer1"].ToString() + "/Admin/Report");
             request2.Headers.Add(new WebTestRequestHeader("Referer", (this.Context["WebServer1"].ToString() + "/Account/Login")));
@@ -67,23 +69,26 @@ namespace RegressionTest
             request2 = null;
 
             WebTestRequest request3 = new WebTestRequest((this.Context["WebServer1"].ToString() + "/Admin/Group"));
+            request3.ReportingName = "Team administration";
             request3.Headers.Add(new WebTestRequestHeader("Referer", (this.Context["WebServer1"].ToString() + "/Admin/Report")));
             yield return request3;
             request3 = null;
 
             WebTestRequest request4 = new WebTestRequest((this.Context["WebServer1"].ToString() + "/Admin/Group/Create"));
+            request4.ReportingName = "Create new team";
             request4.Headers.Add(new WebTestRequestHeader("Referer", (this.Context["WebServer1"].ToString() + "/Admin/Group")));
             yield return request4;
             request4 = null;
 
             WebTestRequest request5 = new WebTestRequest((this.Context["WebServer1"].ToString() + "/Admin/Group/Create"));
+            request5.ReportingName = "Save new team";
             request5.Method = "POST";
             request5.ExpectedResponseUrl = (this.Context["WebServer1"].ToString() + "/Admin/Group");
             request5.Headers.Add(new WebTestRequestHeader("Referer", (this.Context["WebServer1"].ToString() + "/Admin/Group/Create")));
             FormPostHttpBody request5Body = new FormPostHttpBody();
             request5Body.FormPostParameters.Add("Name", this.Context["TEAM NAME"].ToString());
             request5.Body = request5Body;
-            TeamEditExtractPlugin extractionRule2 = new TeamEditExtractPlugin();
+            ExtractTeamEdit extractionRule2 = new ExtractTeamEdit();
             extractionRule2.TeamName = this.Context["TEAM NAME"].ToString();
             extractionRule2.TeamID = "";
             extractionRule2.ContextParameterName = "NewTeam";
@@ -93,12 +98,14 @@ namespace RegressionTest
 
             WebTestRequest request6 = new WebTestRequest((this.Context["WebServer1"].ToString()
                             + ("/Admin/Group/Edit/" + this.Context["NewTeam"].ToString())));
+            request6.ReportingName = "Edit team";
             request6.Headers.Add(new WebTestRequestHeader("Referer", (this.Context["WebServer1"].ToString() + "/Admin/Group")));
             yield return request6;
             request6 = null;
 
             WebTestRequest request7 = new WebTestRequest((this.Context["WebServer1"].ToString()
                             + ("/Admin/Group/Edit/" + this.Context["NewTeam"].ToString())));
+            request7.ReportingName = "Save team";
             request7.Method = "POST";
             request7.ExpectedResponseUrl = (this.Context["WebServer1"].ToString() + "/Admin/Group");
             request7.Headers.Add(new WebTestRequestHeader("Referer", (this.Context["WebServer1"].ToString()
@@ -112,6 +119,7 @@ namespace RegressionTest
 
             WebTestRequest request8 = new WebTestRequest((this.Context["WebServer1"].ToString()
                             + ("/Admin/Group/Delete/" + this.Context["NewTeam"].ToString())));
+            request8.ReportingName = "Delete team";
             request8.ExpectedResponseUrl = (this.Context["WebServer1"].ToString() + "/Admin/Group");
             request8.Headers.Add(new WebTestRequestHeader("Referer", (this.Context["WebServer1"].ToString() + "/Admin/Group")));
             if ((this.Context.ValidationLevel >= Microsoft.VisualStudio.TestTools.WebTesting.ValidationLevel.High))

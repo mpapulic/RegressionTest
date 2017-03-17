@@ -1,14 +1,7 @@
-﻿using HtmlAgilityPack;
-using Microsoft.VisualStudio.TestTools.WebTesting;
+﻿using Microsoft.VisualStudio.TestTools.WebTesting;
 using System.IO;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using PluginLibrary.Helper;
-using PluginLibrary.Models;
 
 namespace PluginLibrary.Extract
 {

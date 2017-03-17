@@ -1,22 +1,14 @@
-﻿using HtmlAgilityPack;
-using Microsoft.VisualStudio.TestTools.WebTesting;
+﻿using Microsoft.VisualStudio.TestTools.WebTesting;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using PluginLibrary.Helper;
-using PluginLibrary.Models;
 
 namespace PluginLibrary
 {
     public class ChargeDatePlugin : WebTestRequestPlugin
     {
-        [Description("Set charge date")]
-        public string ParameterName { get; set; }
-        [Description("How many days in past:")]
+        //[Description("Set charge date")]
+        //public string ParameterName { get; set; }
+        [Description("Charge creation date , the number of days in past, from today:")]
         public int daysInPast { get; set; }
 
         public override void PreRequest(object sender, PreRequestEventArgs e)
@@ -29,7 +21,6 @@ namespace PluginLibrary
             e.WebTest.Context.Add("ChargeDateMonth", chargeDate.Month);
             e.WebTest.Context.Add("ChargeDateYear", chargeDate.Year);
             e.WebTest.Context.Add("ChargeDate", chargeDate);
-            System.IO.File.WriteAllText(@"C:\Temp\ChargeDatePlugin.txt", $"Usao u ChargeDatePlugin days in past: {daysInPast}  ChargeDate : {chargeDate} .");
         }
     }
 }

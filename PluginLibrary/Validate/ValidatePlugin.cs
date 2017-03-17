@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.WebTesting;
 
 namespace PluginLibrary

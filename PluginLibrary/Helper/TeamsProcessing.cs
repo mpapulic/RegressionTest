@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using HtmlAgilityPack;
 using System.IO;
-using System.Net;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PluginLibrary.Models;
 
 namespace PluginLibrary.Helper
@@ -28,18 +23,6 @@ namespace PluginLibrary.Helper
         }
         public static List<Team>  GetAllTeams(HtmlDocument doc)
         {
-            // LOS DEBUG SISTEM
-            // Create a file to write to.
-            using (StreamWriter sw = File.CreateText(@"C:\Temp\TestTeam.txt"))
-            {
-                sw.WriteLine(doc.DocumentNode.OuterHtml);
-                sw.WriteLine("");
-                sw.WriteLine($"POCETAK UPISA sa proverom : ");
-                sw.WriteLine("=>");
-            }
-            // KAJ LOSEG DEBUGA KOJI PROVJERAVA DA LI JE DOKUMENT UZET
-
-
             // list of the TEAMs on the page
             List<Team> list = new List<Team>();
 
@@ -74,9 +57,7 @@ namespace PluginLibrary.Helper
                             foreach (var CELL in nodesCells)
                             {
                                 // take a regex 
-                                //string a = Obrada.RemoveSpecialCharacters(CELL.InnerText);
                                 string a = CELL.InnerText.Trim('\n', '\r', ' ');
-                                //string b = Obrada.RemoveSpecialCharacters(CELL.InnerHtml);
                                 string b = CELL.InnerHtml.Trim('\n', '\r', ' ');
                                 // the fist column = Team name , the second column contains ID for editing Team, the third column contains info is possible delete Team
                                 if (i == 0)
@@ -90,12 +71,6 @@ namespace PluginLibrary.Helper
                                 i++;
                             }
                             list.Add(new Team { Table = "Team", Vrednost = teamName, ID = teamId });
-                            // LOS DEBUG
-                            using (StreamWriter sw = File.AppendText(@"C:\Temp\TestTeam.txt"))
-                            {
-                                sw.WriteLine($"{j}/{nodesRows.Count} =>  team name:{ teamName }  team ID:{ teamId} ");
-                            }
-                            // END LOS DEBUG
                         }
                         else
                         {
@@ -121,7 +96,6 @@ namespace PluginLibrary.Helper
                 }
                 k++;
             }
-
             return list;
         }
     }

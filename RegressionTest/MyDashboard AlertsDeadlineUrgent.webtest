@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WebTest Name="MyDashboard AlertsDeadlineUrgent" Id="65fed209-49fd-421f-ad1b-4cfb6f2a4441" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest2.5513d8b6-5b5c-410a-99b0-4627926b3757.rec.webtestresult" ResultsLocale="">
+<WebTest Name="MyDashboard AlertsDeadlineUrgent" Id="65fed209-49fd-421f-ad1b-4cfb6f2a4441" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="MyDashboard AlertsDeadlineUrgent.eb5e0429-8cc5-43a9-b678-f8a1c43679f1.rec.webtestresult" ResultsLocale="">
   <Items>
-    <Request Method="GET" Guid="5c70def8-071d-47cb-95b4-22ea654c780a" Version="1.1" Url="{{WebServer1}}/" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="Home" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="5c70def8-071d-47cb-95b4-22ea654c780a" Version="1.1" Url="{{WebServer1}}/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="Home" IgnoreHttpStatusCode="False">
       <ExtractionRules>
         <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
           <RuleParameters>
@@ -47,7 +47,7 @@
         <FormPostParameter Name="Password" Value="password" RecordedValue="password" CorrelationBinding="{{FormPostParam1.Password}}" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="GET" Guid="ac2e8906-96aa-4847-b5ee-ab1bb32252bf" Version="1.1" Url="{{WebServer1}}/Mr01/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="ac2e8906-96aa-4847-b5ee-ab1bb32252bf" Version="1.1" Url="{{WebServer1}}/Mr01/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Create MR01" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Admin/Report" />
       </Headers>
@@ -184,7 +184,7 @@
         <QueryStringParameter Name="typeId" Value="1" RecordedValue="1" CorrelationBinding="{{QueryStringParam2.typeId}}" UrlEncode="False" UseToGroupResults="False" />
       </QueryStringParameters>
     </Request>
-    <Request Method="POST" Guid="280b407d-e540-4ffd-a35f-70910153fe8a" Version="1.1" Url="{{WebServer1}}/Submission/CompanySearch" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Company Search" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="280b407d-e540-4ffd-a35f-70910153fe8a" Version="1.1" Url="{{WebServer1}}/Submission/CompanySearch" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Search companies" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Accept" Value="*/*" />
         <Header Name="X-Requested-With" Value="XMLHttpRequest" />
@@ -196,7 +196,7 @@
         <FormPostParameter Name="companyAuthCode" Value="undefined" RecordedValue="undefined" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="POST" Guid="24c00dba-52b3-497e-a425-3b7954dd145d" Version="1.1" Url="{{WebServer1}}/Submission/CompanyDetails" ThinkTime="51" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Company Details" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="24c00dba-52b3-497e-a425-3b7954dd145d" Version="1.1" Url="{{WebServer1}}/Submission/CompanyDetails" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Get company details" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Accept" Value="*/*" />
         <Header Name="X-Requested-With" Value="XMLHttpRequest" />
@@ -206,7 +206,7 @@
         <FormPostParameter Name="companyNr" Value="05292202" RecordedValue="05292202" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="POST" Guid="4ac40925-27db-4a5f-aaed-a4a30922becc" Version="1.1" Url="{{WebServer1}}/Submission/AttachFile" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="4ac40925-27db-4a5f-aaed-a4a30922becc" Version="1.1" Url="{{WebServer1}}/Submission/AttachFile" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Attach file" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Accept" Value="*/*" />
         <Header Name="X-Requested-With" Value="XMLHttpRequest" />
@@ -219,7 +219,7 @@
         <FileUploadParameter Name="file" FileName="DEED OF CHARGE.pdf" ContentType="application/pdf" GenerateUniqueName="True" UseGuids="False" FileUploadName="" HtmlEncodeFileName="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="POST" Guid="fd0dafbe-1380-43d6-93b1-aeaea614ea76" Version="1.1" Url="{{WebServer1}}/Mr01/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="fd0dafbe-1380-43d6-93b1-aeaea614ea76" Version="1.1" Url="{{WebServer1}}/Mr01/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Publish submission" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Mr01/Create" />
       </Headers>
@@ -288,25 +288,12 @@
         <FileUploadParameter Name="files" FileName="" ContentType="application/octet-stream" GenerateUniqueName="True" UseGuids="False" FileUploadName="" HtmlEncodeFileName="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="GET" Guid="2f520802-e8bc-4cc1-8770-36bd88acfb19" Version="1.1" Url="{{WebServer1}}/Dashboard/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="2f520802-e8bc-4cc1-8770-36bd88acfb19" Version="1.1" Url="{{WebServer1}}/Dashboard/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="My Dashboard" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Mr01/Edit/{{SubmissionGUID}}?typeId=1" />
       </Headers>
-      <ExtractionRules>
-        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam1.alertType" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
-          <RuleParameters>
-            <RuleParameter Name="StartsWith" Value="?alertType=" />
-            <RuleParameter Name="EndsWith" Value="&quot;" />
-            <RuleParameter Name="Index" Value="0" />
-            <RuleParameter Name="IgnoreCase" Value="False" />
-            <RuleParameter Name="UseRegularExpression" Value="False" />
-            <RuleParameter Name="HtmlDecode" Value="True" />
-            <RuleParameter Name="Required" Value="False" />
-          </RuleParameters>
-        </ExtractionRule>
-      </ExtractionRules>
     </Request>
-    <Request Method="GET" Guid="844320af-2a8b-4a7e-ac6c-078bf45e35d6" Version="1.1" Url="{{WebServer1}}/Submission/AlertSubmissions" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="844320af-2a8b-4a7e-ac6c-078bf45e35d6" Version="1.1" Url="{{WebServer1}}/Submission/AlertSubmissions" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Report - urgent submission" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Dashboard/Index" />
       </Headers>
@@ -320,11 +307,8 @@
           </RuleParameters>
         </ValidationRule>
       </ValidationRules>
-      <QueryStringParameters>
-        <QueryStringParameter Name="alertType" Value="{{QueryStringParam1.alertType}}" RecordedValue="1" CorrelationBinding="{{QueryStringParam1.alertType}}" UrlEncode="False" UseToGroupResults="False" />
-      </QueryStringParameters>
     </Request>
-    <Request Method="GET" Guid="3a42dc5d-8800-4809-ab9a-786e13a9c7d9" Version="1.1" Url="{{WebServer1}}/Account/Logout" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="3a42dc5d-8800-4809-ab9a-786e13a9c7d9" Version="1.1" Url="{{WebServer1}}/Account/Logout" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="Logout" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Submission/AlertSubmissions?alertType=1" />
       </Headers>

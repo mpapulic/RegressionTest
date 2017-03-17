@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WebTest Name="MyDashboard AlertsReviewed" Id="184410ca-b5c8-44d7-92b4-8e422e23f9e2" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.592c2e97-d20f-4479-86e0-e2b7d93728af.rec.webtestresult" ResultsLocale="">
+<WebTest Name="MyDashboard AlertsReviewed" Id="184410ca-b5c8-44d7-92b4-8e422e23f9e2" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="MyDashboard AlertsReviewed.f9a62125-d99a-4613-b43b-ff7c8cac8a1b.rec.webtestresult" ResultsLocale="">
   <Items>
-    <Request Method="GET" Guid="2204ac33-1a7f-41e4-9fd0-88a112459348" Version="1.1" Url="http://oyezgateway.test.gowi.rs/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Account/Login" ReportingName="Home" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="2204ac33-1a7f-41e4-9fd0-88a112459348" Version="1.1" Url="{{WebServer1}}/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="Home" IgnoreHttpStatusCode="False">
       <ExtractionRules>
         <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
           <RuleParameters>
@@ -24,9 +24,9 @@
         </ExtractionRule>
       </CorrelationExtractionRules>
     </Request>
-    <Request Method="POST" Guid="f0261f79-71a5-4ca0-9e49-2a597055779b" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Account/Login" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Admin/Report" ReportingName="Login" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="f0261f79-71a5-4ca0-9e49-2a597055779b" Version="1.1" Url="{{WebServer1}}/Account/Login" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Admin/Report" ReportingName="Login" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Account/Login" />
+        <Header Name="Referer" Value="{{WebServer1}}/Account/Login" />
       </Headers>
       <CorrelationExtractionRules>
         <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam7.typeId" DisplayName="" Description="">
@@ -47,9 +47,138 @@
         <FormPostParameter Name="Password" Value="password" RecordedValue="password" CorrelationBinding="{{FormPostParam22.Password}}" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="GET" Guid="b3a50886-6104-4c3c-8348-fd02a2a94f0d" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Mr05/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Create MR05" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="84dfaf35-af5b-491d-94d8-a5b93ae60ab1" Version="1.1" Url="{{WebServer1}}/Admin/Admin/Preferences" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Settings" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Admin/Report" />
+        <Header Name="Referer" Value="{{WebServer1}}/Admin/Report" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.CertifiedByInformationOnSubmitToCH" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="CertifiedByInformationOnSubmitToCH" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.DisplayThreeIdQuestionsOnly" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="DisplayThreeIdQuestionsOnly" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.UrgentDays" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="UrgentDays" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.VeryUrgentDays" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="VeryUrgentDays" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5.ArchiveDays" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ArchiveDays" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6.CompanyHouseWorkingAlertVisible" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="CompanyHouseWorkingAlertVisible" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam7.IsDateFromCreated" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsDateFromCreated" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam8.SortApproversBy" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dex=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; typ" />
+            <RuleParameter Name="Index" Value="1" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam9.RestrictedAccessStatus" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Inv" />
+            <RuleParameter Name="Index" Value="32" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="48407fc6-884d-42fe-bd09-6a59db1b2662" Version="1.1" Url="{{WebServer1}}/Admin/Admin/Preferences" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Save Settings" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Admin/Admin/Preferences" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Id" Value="{{$HIDDEN1.Id}}" RecordedValue="99999c14-06da-4b77-aed8-27082c34269f" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UseTestEnvironment" Value="{{$HIDDEN1.UseTestEnvironment}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UserAttempCountLimit" Value="{{$HIDDEN1.UserAttempCountLimit}}" RecordedValue="5" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UserPasswordHistoryLimit" Value="{{$HIDDEN1.UserPasswordHistoryLimit}}" RecordedValue="3" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedByInformationOnSubmitToCH" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam1.CertifiedByInformationOnSubmitToCH}}" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedByInformationOnSubmitToCH" Value="{{$HIDDEN1.CertifiedByInformationOnSubmitToCH}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DisplayThreeIdQuestionsOnly" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam2.DisplayThreeIdQuestionsOnly}}" UrlEncode="True" />
+        <FormPostParameter Name="DisplayThreeIdQuestionsOnly" Value="{{$HIDDEN1.DisplayThreeIdQuestionsOnly}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="YesStatement" Value="Yes, part of the deed has been redacted" RecordedValue="Yes, part of the deed has been redacted" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="NoStatement" Value="No, none of the deed has been redacted " RecordedValue="No, none of the deed has been redacted " CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UrgentDays" Value="13" RecordedValue="13" CorrelationBinding="{{FormPostParam3.UrgentDays}}" UrlEncode="True" />
+        <FormPostParameter Name="VeryUrgentDays" Value="5" RecordedValue="5" CorrelationBinding="{{FormPostParam4.VeryUrgentDays}}" UrlEncode="True" />
+        <FormPostParameter Name="ArchiveDays" Value="15" RecordedValue="15" CorrelationBinding="{{FormPostParam5.ArchiveDays}}" UrlEncode="True" />
+        <FormPostParameter Name="CustomerReferenceEditable" Value="{{$HIDDEN1.CustomerReferenceEditable}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberVisible" Value="{{$HIDDEN1.ClientMatterNumberVisible}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberRequired" Value="{{$HIDDEN1.ClientMatterNumberRequired}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CompanyHouseWorkingAlertVisible" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam6.CompanyHouseWorkingAlertVisible}}" UrlEncode="True" />
+        <FormPostParameter Name="CompanyHouseWorkingAlertVisible" Value="{{$HIDDEN1.CompanyHouseWorkingAlertVisible}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SendChApprovedEmailToOrgAdmin" Value="{{$HIDDEN1.SendChApprovedEmailToOrgAdmin}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SendChRejectedEmailToOrgAdmin" Value="{{$HIDDEN1.SendChRejectedEmailToOrgAdmin}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SendInternalApprovedEmailToOrgAdmin" Value="{{$HIDDEN1.SendInternalApprovedEmailToOrgAdmin}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SendInternalRejectedEmailToOrgAdmin" Value="{{$HIDDEN1.SendInternalRejectedEmailToOrgAdmin}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AccountManagerEmail" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ShowSendLinkInviteURL" Value="{{$HIDDEN1.ShowSendLinkInviteURL}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsDateFromCreated" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam7.IsDateFromCreated}}" UrlEncode="True" />
+        <FormPostParameter Name="IsDateFromCreated" Value="{{$HIDDEN1.IsDateFromCreated}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SortApproversBy" Value="2" RecordedValue="2" CorrelationBinding="{{FormPostParam8.SortApproversBy}}" UrlEncode="True" />
+        <FormPostParameter Name="RestrictedAccessStatus" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam9.RestrictedAccessStatus}}" UrlEncode="True" />
+        <FormPostParameter Name="IsPdfLimit" Value="{{$HIDDEN1.IsPdfLimit}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="b3a50886-6104-4c3c-8348-fd02a2a94f0d" Version="1.1" Url="{{WebServer1}}/Mr05/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Create MR05" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Admin/Report" />
       </Headers>
       <ExtractionRules>
         <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
@@ -127,11 +256,11 @@
         <QueryStringParameter Name="typeId" Value="5" RecordedValue="5" CorrelationBinding="{{QueryStringParam7.typeId}}" UrlEncode="False" UseToGroupResults="False" />
       </QueryStringParameters>
     </Request>
-    <Request Method="POST" Guid="2ff043f4-7f5b-4576-83a9-45968f32c1fb" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/CompanySearch" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Search companies" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="2ff043f4-7f5b-4576-83a9-45968f32c1fb" Version="1.1" Url="{{WebServer1}}/Submission/CompanySearch" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Search companies" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Accept" Value="*/*" />
         <Header Name="X-Requested-With" Value="XMLHttpRequest" />
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Create?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Create?typeId=5" />
       </Headers>
       <FormPostHttpBody>
         <FormPostParameter Name="companyNo" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
@@ -139,30 +268,30 @@
         <FormPostParameter Name="companyAuthCode" Value="undefined" RecordedValue="undefined" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="POST" Guid="e10ab75e-fa1e-424d-b229-2fc2d4f3bf48" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/CompanyDetails" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Get company details" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="e10ab75e-fa1e-424d-b229-2fc2d4f3bf48" Version="1.1" Url="{{WebServer1}}/Submission/CompanyDetails" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Get company details" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Accept" Value="*/*" />
         <Header Name="X-Requested-With" Value="XMLHttpRequest" />
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Create?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Create?typeId=5" />
       </Headers>
       <FormPostHttpBody>
         <FormPostParameter Name="companyNr" Value="05292202" RecordedValue="05292202" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="POST" Guid="5a480483-195e-41eb-b876-e38d6fdfbaee" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Mr04Mr05/GetMortgages" ThinkTime="43" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Get company mortgages" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="5a480483-195e-41eb-b876-e38d6fdfbaee" Version="1.1" Url="{{WebServer1}}/Mr04Mr05/GetMortgages" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Get company mortgages" IgnoreHttpStatusCode="False">
       <Headers>
         <Header Name="Accept" Value="*/*" />
         <Header Name="X-Requested-With" Value="XMLHttpRequest" />
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Create?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Create?typeId=5" />
       </Headers>
       <FormPostHttpBody>
         <FormPostParameter Name="companyNo" Value="05292202" RecordedValue="05292202" CorrelationBinding="" UrlEncode="True" />
         <FormPostParameter Name="companyName" Value="MILE LTD" RecordedValue="MILE LTD" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="POST" Guid="e63935b7-0f91-4336-9f34-5a39919ee3f1" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Mr05/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Publish submission" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="e63935b7-0f91-4336-9f34-5a39919ee3f1" Version="1.1" Url="{{WebServer1}}/Mr05/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Publish submission" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Create?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Create?typeId=5" />
       </Headers>
       <ExtractionRules>
         <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
@@ -257,9 +386,9 @@
         <FormPostParameter Name="DeliveringPersonPersonsInterestInTheCharge" Value="TEST PERSON" RecordedValue="TEST PERSON" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="POST" Guid="57028b14-acfa-4493-a02a-1f5e35b80df9" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/OnReject" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Reject submission" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="57028b14-acfa-4493-a02a-1f5e35b80df9" Version="1.1" Url="{{WebServer1}}/Submission/OnReject" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Reject submission" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
       </Headers>
       <FormPostHttpBody>
         <FormPostParameter Name="Id" Value="{{$HIDDEN1.Id}}" RecordedValue="{{SubmissionGUID}}" CorrelationBinding="" UrlEncode="True" />
@@ -277,12 +406,12 @@
         <FormPostParameter Name="reject" Value="Reject submission" RecordedValue="Reject submission" CorrelationBinding="{{FormPostParam15.reject}}" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="GET" Guid="080e8cf5-83e0-461e-842a-c9f4c8a8325e" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Dashboard/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="My Dashboard" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="080e8cf5-83e0-461e-842a-c9f4c8a8325e" Version="1.1" Url="{{WebServer1}}/Dashboard/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="My Dashboard" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
       </Headers>
-      <CorrelationExtractionRules>
-        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam6.alertType" DisplayName="" Description="">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam6.alertType" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
           <RuleParameters>
             <RuleParameter Name="StartsWith" Value="?alertType=" />
             <RuleParameter Name="EndsWith" Value="&quot;" />
@@ -293,19 +422,19 @@
             <RuleParameter Name="Required" Value="False" />
           </RuleParameters>
         </ExtractionRule>
-      </CorrelationExtractionRules>
+      </ExtractionRules>
     </Request>
-    <Request Method="GET" Guid="3c0b80e3-9775-4d46-9f9e-9d8fd3bd8897" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/AlertSubmissions" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Report - reviewed submissions" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="3c0b80e3-9775-4d46-9f9e-9d8fd3bd8897" Version="1.1" Url="{{WebServer1}}/Submission/AlertSubmissions" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Report - reviewed submissions" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Dashboard/Index" />
+        <Header Name="Referer" Value="{{WebServer1}}/Dashboard/Index" />
       </Headers>
       <QueryStringParameters>
-        <QueryStringParameter Name="alertType" Value="7" RecordedValue="7" CorrelationBinding="{{QueryStringParam6.alertType}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alertType" Value="{{QueryStringParam6.alertType}}" RecordedValue="7" CorrelationBinding="{{QueryStringParam6.alertType}}" UrlEncode="False" UseToGroupResults="False" />
       </QueryStringParameters>
     </Request>
-    <Request Method="GET" Guid="596bf907-736f-43ec-8c79-88e92dbc324f" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/Details/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Get submission details" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="596bf907-736f-43ec-8c79-88e92dbc324f" Version="1.1" Url="{{WebServer1}}/Submission/Details/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Get submission details" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Submission/AlertSubmissions?alertType=7" />
+        <Header Name="Referer" Value="{{WebServer1}}/Submission/AlertSubmissions?alertType=7" />
       </Headers>
       <CorrelationExtractionRules>
         <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam5.statusIdFromThePage" DisplayName="" Description="">
@@ -321,13 +450,13 @@
         </ExtractionRule>
       </CorrelationExtractionRules>
     </Request>
-    <Request Method="GET" Guid="e29b6076-1d8c-4862-87d5-ecd3ff7251ab" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/TransitionToPreviousStatus/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Mr05/Edit/{{SubmissionGUID}}?typeId=5" ReportingName="" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="e29b6076-1d8c-4862-87d5-ecd3ff7251ab" Version="1.1" Url="{{WebServer1}}/Submission/TransitionToPreviousStatus/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr05/Edit/{{SubmissionGUID}}?typeId=5" ReportingName="Edit submission" IgnoreHttpStatusCode="False">
       <DependentRequests>
-        <Request Method="POST" Guid="d40a8284-2715-4260-990b-b5c206332b15" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Mr04Mr05/GetMortgages" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Get company mortgages" IgnoreHttpStatusCode="False">
+        <Request Method="POST" Guid="d40a8284-2715-4260-990b-b5c206332b15" Version="1.1" Url="{{WebServer1}}/Mr04Mr05/GetMortgages" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Get company mortgages" IgnoreHttpStatusCode="False">
           <Headers>
             <Header Name="Accept" Value="*/*" />
             <Header Name="X-Requested-With" Value="XMLHttpRequest" />
-            <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Edit/{{SubmissionGUID}}?typeId=5" />
+            <Header Name="Referer" Value="{{WebServer1}}/Mr05/Edit/{{SubmissionGUID}}?typeId=5" />
           </Headers>
           <FormPostHttpBody>
             <FormPostParameter Name="companyNo" Value="05292202" RecordedValue="05292202" CorrelationBinding="{{FormPostParam23.companyNo}}" UrlEncode="True" />
@@ -336,7 +465,7 @@
         </Request>
       </DependentRequests>
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
       </Headers>
       <ExtractionRules>
         <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
@@ -495,9 +624,9 @@
         <QueryStringParameter Name="statusIdFromThePage" Value="4" RecordedValue="4" CorrelationBinding="{{QueryStringParam5.statusIdFromThePage}}" UrlEncode="False" UseToGroupResults="False" />
       </QueryStringParameters>
     </Request>
-    <Request Method="POST" Guid="fbf3e173-98b3-475a-a725-4c86d11ca02e" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Mr05/Edit/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Publish submission" IgnoreHttpStatusCode="False">
+    <Request Method="POST" Guid="fbf3e173-98b3-475a-a725-4c86d11ca02e" Version="1.1" Url="{{WebServer1}}/Mr05/Edit/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Publish submission" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Edit/{{SubmissionGUID}}?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Edit/{{SubmissionGUID}}?typeId=5" />
       </Headers>
       <CorrelationExtractionRules>
         <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam2.statusIdFromThePage" DisplayName="" Description="">
@@ -579,11 +708,11 @@
         <FormPostParameter Name="DeliveringPersonPersonsInterestInTheCharge" Value="TEST PERSON" RecordedValue="TEST PERSON" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
-    <Request Method="GET" Guid="b8b0dfd8-beb1-4958-a133-7cf833e4322d" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/OnApproveJobToSubmission/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Approve submission " IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="b8b0dfd8-beb1-4958-a133-7cf833e4322d" Version="1.1" Url="{{WebServer1}}/Submission/OnApproveJobToSubmission/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Approve submission " IgnoreHttpStatusCode="False">
       <DependentRequests>
-        <Request Method="GET" Guid="7f32658c-108b-46d5-8484-9ffdae274ef6" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/OnApproveJobToSubmission/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Confirm approving" IgnoreHttpStatusCode="False">
+        <Request Method="GET" Guid="7f32658c-108b-46d5-8484-9ffdae274ef6" Version="1.1" Url="{{WebServer1}}/Submission/OnApproveJobToSubmission/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" ReportingName="Confirm approving" IgnoreHttpStatusCode="False">
           <Headers>
-            <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
+            <Header Name="Referer" Value="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
           </Headers>
           <QueryStringParameters>
             <QueryStringParameter Name="statusIdFromThePage" Value="10" RecordedValue="10" CorrelationBinding="{{QueryStringParam43.statusIdFromThePage}}" UrlEncode="False" UseToGroupResults="False" />
@@ -596,12 +725,12 @@
         <QueryStringParameter Name="reason" Value="TEST%20APPROVE" RecordedValue="TEST%20APPROVE" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
       </QueryStringParameters>
     </Request>
-    <Request Method="GET" Guid="3a3452fc-de4d-4acd-b203-6dbc41f0c290" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Dashboard/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="My Dashboard" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="3a3452fc-de4d-4acd-b203-6dbc41f0c290" Version="1.1" Url="{{WebServer1}}/Dashboard/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="My Dashboard" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr05/Details/{{SubmissionGUID}}?typeId=5" />
       </Headers>
-      <CorrelationExtractionRules>
-        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam1.alertType" DisplayName="" Description="">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam1.alertType" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
           <RuleParameters>
             <RuleParameter Name="StartsWith" Value="?alertType=" />
             <RuleParameter Name="EndsWith" Value="&quot;" />
@@ -612,27 +741,31 @@
             <RuleParameter Name="Required" Value="False" />
           </RuleParameters>
         </ExtractionRule>
-      </CorrelationExtractionRules>
+      </ExtractionRules>
     </Request>
-    <Request Method="GET" Guid="99a5cde1-4381-469c-9aa0-628673768a1e" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Submission/AlertSubmissions" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Report - reviewed submissions" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="99a5cde1-4381-469c-9aa0-628673768a1e" Version="1.1" Url="{{WebServer1}}/Submission/AlertSubmissions" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="Report - reviewed submissions" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Dashboard/Index" />
+        <Header Name="Referer" Value="{{WebServer1}}/Dashboard/Index" />
       </Headers>
       <QueryStringParameters>
-        <QueryStringParameter Name="alertType" Value="7" RecordedValue="7" CorrelationBinding="{{QueryStringParam1.alertType}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alertType" Value="{{QueryStringParam1.alertType}}" RecordedValue="7" CorrelationBinding="{{QueryStringParam1.alertType}}" UrlEncode="False" UseToGroupResults="False" />
       </QueryStringParameters>
     </Request>
-    <Request Method="GET" Guid="1b80c692-98b1-4dda-ad17-9da03758fd9f" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Account/Logout" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Account/Login" ReportingName="Logout" IgnoreHttpStatusCode="False">
+    <Request Method="GET" Guid="1b80c692-98b1-4dda-ad17-9da03758fd9f" Version="1.1" Url="{{WebServer1}}/Account/Logout" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="Logout" IgnoreHttpStatusCode="False">
       <Headers>
-        <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Submission/AlertSubmissions?alertType=7" />
+        <Header Name="Referer" Value="{{WebServer1}}/Submission/AlertSubmissions?alertType=7" />
       </Headers>
     </Request>
   </Items>
+  <ContextParameters>
+    <ContextParameter Name="WebServer1" Value="http://oyezgateway.test.gowi.rs" />
+  </ContextParameters>
   <ValidationRules>
     <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
       <RuleParameters>
         <RuleParameter Name="Tolerance" Value="0" />
       </RuleParameters>
     </ValidationRule>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
   </ValidationRules>
 </WebTest>
