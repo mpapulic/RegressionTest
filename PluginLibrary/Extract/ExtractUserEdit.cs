@@ -7,7 +7,7 @@ namespace PluginLibrary
 {
     [DisplayName("Extract Value from the Table Users")]
     [Description("Grabs a GUID value from user table.")]
-    public class ExtractUserEdit : ExtractionRule
+    public class UserEditExtractPlugin : ExtractionRule
     {
 
         [DisplayName("UserMail")]

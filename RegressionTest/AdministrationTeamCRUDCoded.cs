@@ -88,7 +88,7 @@ namespace RegressionTest
             FormPostHttpBody request5Body = new FormPostHttpBody();
             request5Body.FormPostParameters.Add("Name", this.Context["TEAM NAME"].ToString());
             request5.Body = request5Body;
-            ExtractTeamEdit extractionRule2 = new ExtractTeamEdit();
+            TeamEditExtractPlugin extractionRule2 = new TeamEditExtractPlugin();
             extractionRule2.TeamName = this.Context["TEAM NAME"].ToString();
             extractionRule2.TeamID = "";
             extractionRule2.ContextParameterName = "NewTeam";

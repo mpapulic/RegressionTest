@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="FileActionDuplicate" Id="9943cf29-77c8-4431-8bfe-3f2ad77d09d1" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.a7f7a98e-17d3-40c9-9964-cd8e82f558db.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="dd8e225d-7232-4147-a013-b24e09d9ba01" Version="1.1" Url="{{WebServer1}}/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam10.Password" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ype=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; nam" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="3ad30459-20ee-4a64-901c-49cee999cb1f" Version="1.1" Url="{{WebServer1}}/Account/Login" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Admin/Report" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Account/Login" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="ReturnUrl" Value="{{$HIDDEN1.ReturnUrl}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UserName" Value="admin.milan.papulic@gowi.rs" RecordedValue="admin.milan.papulic@gowi.rs" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="password" RecordedValue="password" CorrelationBinding="{{FormPostParam10.Password}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="d3642ba5-18cc-4866-9ba8-0c208c9e96b1" Version="1.1" Url="{{WebServer1}}/Admin/Admin/Preferences" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Admin/Report" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.DisplayThreeIdQuestionsOnly" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="DisplayThreeIdQuestionsOnly" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.UrgentDays" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="UrgentDays" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.VeryUrgentDays" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="VeryUrgentDays" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.ArchiveDays" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ArchiveDays" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5.CompanyHouseWorkingAlertVisible" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="CompanyHouseWorkingAlertVisible" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6.SendChRejectedEmailToOrgAdmin" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="SendChRejectedEmailToOrgAdmin" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam7.IsDateFromCreated" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsDateFromCreated" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam8.SortApproversBy" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dex=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; typ" />
+            <RuleParameter Name="Index" Value="1" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam9.RestrictedAccessStatus" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Inv" />
+            <RuleParameter Name="Index" Value="32" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="82b66441-0de0-49c4-8484-f14da5d3ba93" Version="1.1" Url="{{WebServer1}}/Admin/Admin/Preferences" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Admin/Admin/Preferences" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam1.typeId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?typeId=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Id" Value="{{$HIDDEN1.Id}}" RecordedValue="99999c14-06da-4b77-aed8-27082c34269f" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UseTestEnvironment" Value="{{$HIDDEN1.UseTestEnvironment}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UserAttempCountLimit" Value="{{$HIDDEN1.UserAttempCountLimit}}" RecordedValue="5" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UserPasswordHistoryLimit" Value="{{$HIDDEN1.UserPasswordHistoryLimit}}" RecordedValue="3" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedByInformationOnSubmitToCH" Value="{{$HIDDEN1.CertifiedByInformationOnSubmitToCH}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DisplayThreeIdQuestionsOnly" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam1.DisplayThreeIdQuestionsOnly}}" UrlEncode="True" />
+        <FormPostParameter Name="DisplayThreeIdQuestionsOnly" Value="{{$HIDDEN1.DisplayThreeIdQuestionsOnly}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="YesStatement" Value="YES PART" RecordedValue="YES PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="NoStatement" Value="NO PART" RecordedValue="NO PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UrgentDays" Value="10" RecordedValue="10" CorrelationBinding="{{FormPostParam2.UrgentDays}}" UrlEncode="True" />
+        <FormPostParameter Name="VeryUrgentDays" Value="5" RecordedValue="5" CorrelationBinding="{{FormPostParam3.VeryUrgentDays}}" UrlEncode="True" />
+        <FormPostParameter Name="ArchiveDays" Value="15" RecordedValue="15" CorrelationBinding="{{FormPostParam4.ArchiveDays}}" UrlEncode="True" />
+        <FormPostParameter Name="CustomerReferenceEditable" Value="{{$HIDDEN1.CustomerReferenceEditable}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberVisible" Value="{{$HIDDEN1.ClientMatterNumberVisible}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberRequired" Value="{{$HIDDEN1.ClientMatterNumberRequired}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CompanyHouseWorkingAlertVisible" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam5.CompanyHouseWorkingAlertVisible}}" UrlEncode="True" />
+        <FormPostParameter Name="CompanyHouseWorkingAlertVisible" Value="{{$HIDDEN1.CompanyHouseWorkingAlertVisible}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SendChApprovedEmailToOrgAdmin" Value="{{$HIDDEN1.SendChApprovedEmailToOrgAdmin}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SendChRejectedEmailToOrgAdmin" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam6.SendChRejectedEmailToOrgAdmin}}" UrlEncode="True" />
+        <FormPostParameter Name="SendChRejectedEmailToOrgAdmin" Value="{{$HIDDEN1.SendChRejectedEmailToOrgAdmin}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SendInternalApprovedEmailToOrgAdmin" Value="{{$HIDDEN1.SendInternalApprovedEmailToOrgAdmin}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SendInternalRejectedEmailToOrgAdmin" Value="{{$HIDDEN1.SendInternalRejectedEmailToOrgAdmin}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AccountManagerEmail" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ShowSendLinkInviteURL" Value="{{$HIDDEN1.ShowSendLinkInviteURL}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsDateFromCreated" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam7.IsDateFromCreated}}" UrlEncode="True" />
+        <FormPostParameter Name="IsDateFromCreated" Value="{{$HIDDEN1.IsDateFromCreated}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SortApproversBy" Value="2" RecordedValue="2" CorrelationBinding="{{FormPostParam8.SortApproversBy}}" UrlEncode="True" />
+        <FormPostParameter Name="RestrictedAccessStatus" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam9.RestrictedAccessStatus}}" UrlEncode="True" />
+        <FormPostParameter Name="IsPdfLimit" Value="{{$HIDDEN1.IsPdfLimit}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="712dd280-6489-41fd-86dd-a39f2fd952a1" Version="1.1" Url="{{WebServer1}}/Mr01/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Admin/Admin/Preferences" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="SubmissionGUID" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="18" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam11.AdditionalCharges" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="AdditionalCharges" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam12.IncludeFixedCharge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IncludeFixedChargeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam13.FloatingCharge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="FloatingChargeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam14.IsNegativePledge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsNegativePledgeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam15.IsTrusteeStatement" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsTrusteeStatementFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam16.CompanyTypeCode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Eng" />
+            <RuleParameter Name="Index" Value="37" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam17.ChargeCreationDateDay" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dex=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; typ" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam18.AuthQuestion1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Tel" />
+            <RuleParameter Name="Index" Value="98" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam19.AuthQuestion2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Pla" />
+            <RuleParameter Name="Index" Value="97" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam20.AuthQuestion3" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Eye" />
+            <RuleParameter Name="Index" Value="102" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam22.attachmentNumber" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dex=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; typ" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam23.isInEditMode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam24.AdditionalCharges" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="AdditionalCharges" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam25.IncludeFixedCharge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IncludeFixedChargeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam26.FloatingCharge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="FloatingChargeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam27.IsNegativePledge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsNegativePledgeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam28.IsTrusteeStatement" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsTrusteeStatementFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam29.IsPartOfDeedReducted" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsPartOfDeedReductedNo" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam30.submit" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; tab" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam31.CompanyTypeCode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Eng" />
+            <RuleParameter Name="Index" Value="37" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam32.ChargeCreationDateDay" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dex=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; typ" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam33.Statement" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="34" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam34.AuthQuestion1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Tel" />
+            <RuleParameter Name="Index" Value="98" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam35.AuthQuestion2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Pla" />
+            <RuleParameter Name="Index" Value="97" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam36.AuthQuestion3" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Eye" />
+            <RuleParameter Name="Index" Value="102" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam44.typeId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?typeId=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <RequestPlugins>
+        <RequestPlugin Classname="PluginLibrary.ChargeDatePlugin, PluginLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DisplayName="ChargeDatePlugin" Description="">
+          <RuleParameters>
+            <RuleParameter Name="daysInPast" Value="5" />
+          </RuleParameters>
+        </RequestPlugin>
+        <RequestPlugin Classname="Microsoft.VisualStudio.TestTools.WebTesting.RequestPlugins.DateTimeWebRequestPlugin, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Date Time Plugin" Description="Composes date and time in the specified format and assigns it to a given context parameter.">
+          <RuleParameters>
+            <RuleParameter Name="AddDays" Value="0" />
+            <RuleParameter Name="AddHours" Value="0" />
+            <RuleParameter Name="AddMilliseconds" Value="0" />
+            <RuleParameter Name="AddMinutes" Value="0" />
+            <RuleParameter Name="AddMonths" Value="0" />
+            <RuleParameter Name="AddSeconds" Value="0" />
+            <RuleParameter Name="AddYears" Value="0" />
+            <RuleParameter Name="ContextParameterName" Value="SubmissionTitle" />
+            <RuleParameter Name="InputDateTime" Value="" />
+            <RuleParameter Name="OutputFormat" Value="CLONE dd-MM-yyyy hh-mm-ss" />
+            <RuleParameter Name="OutputJsonDateTime" Value="False" />
+            <RuleParameter Name="UseCurrentTime" Value="True" />
+            <RuleParameter Name="UseLocalTime" Value="False" />
+          </RuleParameters>
+        </RequestPlugin>
+      </RequestPlugins>
+      <QueryStringParameters>
+        <QueryStringParameter Name="typeId" Value="1" RecordedValue="1" CorrelationBinding="{{QueryStringParam1.typeId}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="1522a1ff-8d47-4b58-bf24-7315073e3ec5" Version="1.1" Url="{{WebServer1}}/Submission/CompanySearch" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="*/*" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Create?typeId=1" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="companyNo" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="companyName" Value="MILAN" RecordedValue="MILAN" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="companyAuthCode" Value="undefined" RecordedValue="undefined" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="097486b8-a291-46c3-9c54-7a9b2141097e" Version="1.1" Url="{{WebServer1}}/Submission/CompanyDetails" ThinkTime="163" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="*/*" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Create?typeId=1" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="companyNr" Value="05092124" RecordedValue="05092124" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="f50ac413-beee-43b7-ac2f-d884a2d67f81" Version="1.1" Url="{{WebServer1}}/Mr01/AutoSave" ThinkTime="9" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Create?typeId=1" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Title" Value="{{SubmissionTitle}}" RecordedValue="TEST-CLONE" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="isDesignatedApprover" Value="{{$HIDDEN1.isDesignatedApprover}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="isCurrentUserCreator" Value="{{$HIDDEN1.isCurrentUserCreator}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="submissionStatusId" Value="{{$HIDDEN1.submissionStatusId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CanApprove" Value="{{$HIDDEN1.CanApprove}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberP1" Value="{{$HIDDEN1.ClientMatterNumberP1}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberP2" Value="{{$HIDDEN1.ClientMatterNumberP2}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CustomerReferenceEditable" Value="{{$HIDDEN1.CustomerReferenceEditable}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DateCreated" Value="{{$HIDDEN1.DateCreated}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsPrivate" Value="{{$HIDDEN1.IsPrivate}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberVisible" Value="{{$HIDDEN1.ClientMatterNumberVisible}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberRequired" Value="{{$HIDDEN1.ClientMatterNumberRequired}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RestrictedAccessStatus" Value="{{$HIDDEN1.RestrictedAccessStatus}}" RecordedValue="Optional" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Id" Value="{{$HIDDEN1.Id}}" RecordedValue="d7c768b3-2e4c-4b84-b745-18eb3700c897" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.FirstName" Value="{{$HIDDEN1.CreatedBy.FirstName}}" RecordedValue="User1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.LastName" Value="{{$HIDDEN1.CreatedBy.LastName}}" RecordedValue="Org1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Email" Value="{{$HIDDEN1.CreatedBy.Email}}" RecordedValue="admin.milan.papulic@gowi.rs" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Guid" Value="{{$HIDDEN1.CreatedBy.Guid}}" RecordedValue="1234dca9-c19a-4454-80de-f9d66c1b9a99" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.GroupList.SelectedGroupIds" Value="{{$HIDDEN1.CreatedBy.GroupList.SelectedGroupIds}}" RecordedValue="System.String[]" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionStatus.Id" Value="{{$HIDDEN1.SubmissionStatus.Id}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeId" Value="{{$HIDDEN1.SubmissionTypeId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeTitle" Value="{{$HIDDEN1.SubmissionTypeTitle}}" RecordedValue="MR01" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeTitleLong" Value="{{$HIDDEN1.SubmissionTypeTitleLong}}" RecordedValue="MR01 - Particulars of a charge" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="FileKey" Value="{{$HIDDEN1.FileKey}}" RecordedValue="99999c14-06da-4b77-aed8-27082c34269f" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UseTestEnvironment" Value="{{$HIDDEN1.UseTestEnvironment}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedByInformationOnSubmitToCH" Value="{{$HIDDEN1.CertifiedByInformationOnSubmitToCH}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.IsPdfLimit" Value="{{$HIDDEN1.CreatedBy.Organization.IsPdfLimit}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.AccountManagerEmail" Value="{{$HIDDEN1.CreatedBy.Organization.AccountManagerEmail}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.YesStatement" Value="{{$HIDDEN1.CreatedBy.Organization.YesStatement}}" RecordedValue="YES PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.NoStatement" Value="{{$HIDDEN1.CreatedBy.Organization.NoStatement}}" RecordedValue="NO PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SearchPost" Value="{{$HIDDEN1.SearchPost}}" RecordedValue="/Submission/CompanySearch" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CompanyTypeCode" Value="EW" RecordedValue="EW" CorrelationBinding="{{FormPostParam16.CompanyTypeCode}}" UrlEncode="True" />
+        <FormPostParameter Name="CompanyNumber" Value="05092124" RecordedValue="05092124" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CompanyFullName" Value="MILAN LIMITED, UNIT 5-6, 388 GREEN STREET, LONDON, E13 9AP" RecordedValue="MILAN LIMITED, UNIT 5-6, 388 GREEN STREET, LONDON, E13 9AP" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateDay" Value="10" RecordedValue="10" CorrelationBinding="{{FormPostParam17.ChargeCreationDateDay}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateMonth" Value="03" RecordedValue="03" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateYear" Value="2017" RecordedValue="2017" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDate" Value="{{$HIDDEN1.ChargeCreationDate}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName1" Value="TEST NAME ONE" RecordedValue="TEST NAME ONE" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName2" Value="TEST NAME TWO" RecordedValue="TEST NAME TWO" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName3" Value="TEST NAME THREE" RecordedValue="TEST NAME THREE" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName4" Value="TEST NAME FOUR" RecordedValue="TEST NAME FOUR" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AdditionalCharges" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam11.AdditionalCharges}}" UrlEncode="True" />
+        <FormPostParameter Name="AdditionalCharges" Value="{{$HIDDEN1.AdditionalCharges}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Description" Value="TEST DESCRIPTION" RecordedValue="TEST DESCRIPTION" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IncludeFixedCharge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam12.IncludeFixedCharge}}" UrlEncode="True" />
+        <FormPostParameter Name="FloatingCharge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam13.FloatingCharge}}" UrlEncode="True" />
+        <FormPostParameter Name="FloatingChargeComplete" Value="{{$HIDDEN1.FloatingChargeComplete}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsNegativePledge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam14.IsNegativePledge}}" UrlEncode="True" />
+        <FormPostParameter Name="IsTrusteeStatement" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam15.IsTrusteeStatement}}" UrlEncode="True" />
+        <FormPostParameter Name="UploadErrorNotificator" Value="{{$HIDDEN1.UploadErrorNotificator}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertificationYesStatementLabel" Value="{{$HIDDEN1.CertificationYesStatementLabel}}" RecordedValue="YES PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertificationNoStatementLabel" Value="{{$HIDDEN1.CertificationNoStatementLabel}}" RecordedValue="NO PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Statement" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedBy" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsMr01OrMr02" Value="{{$HIDDEN1.IsMr01OrMr02}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeId" Value="{{$HIDDEN1.SubmissionTypeId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DisplayThreeIdQuestionsOnly" Value="{{$HIDDEN1.DisplayThreeIdQuestionsOnly}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion1" Value="TEL" RecordedValue="TEL" CorrelationBinding="{{FormPostParam18.AuthQuestion1}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer1" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion2" Value="BIRTOWN" RecordedValue="BIRTOWN" CorrelationBinding="{{FormPostParam19.AuthQuestion2}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer2" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion3" Value="EYE" RecordedValue="EYE" CorrelationBinding="{{FormPostParam20.AuthQuestion3}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer3" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="60835578-bab7-400b-931b-5c3b45640f2c" Version="1.1" Url="{{WebServer1}}/Submission/AttachFile" ThinkTime="28" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="*/*" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Create?typeId=1" />
+      </Headers>
+      <FormPostHttpBody>
+        <FileUploadParameter Name="file" FileName="DEED OF CHARGE.pdf" ContentType="application/pdf" GenerateUniqueName="True" UseGuids="False" FileUploadName="" HtmlEncodeFileName="True" />
+        <FormPostParameter Name="submissionId" Value="{{SubmissionGUID}}" RecordedValue="d7c768b3-2e4c-4b84-b745-18eb3700c897" CorrelationBinding="{{FormPostParam21.submissionId}}" UrlEncode="True" />
+        <FormPostParameter Name="attachmentNumber" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam22.attachmentNumber}}" UrlEncode="True" />
+        <FormPostParameter Name="isInEditMode" Value="True" RecordedValue="True" CorrelationBinding="{{FormPostParam23.isInEditMode}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="8b33ffa3-a91d-4467-88b1-e3b90295aab5" Version="1.1" Url="{{WebServer1}}/Mr01/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Create?typeId=1" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Title" Value="TEST-CLONE" RecordedValue="TEST-CLONE" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="isDesignatedApprover" Value="{{$HIDDEN1.isDesignatedApprover}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="isCurrentUserCreator" Value="{{$HIDDEN1.isCurrentUserCreator}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="submissionStatusId" Value="{{$HIDDEN1.submissionStatusId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CanApprove" Value="{{$HIDDEN1.CanApprove}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="submit" Value="draft" RecordedValue="draft" CorrelationBinding="{{FormPostParam30.submit}}" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberP1" Value="{{$HIDDEN1.ClientMatterNumberP1}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberP2" Value="{{$HIDDEN1.ClientMatterNumberP2}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CustomerReferenceEditable" Value="{{$HIDDEN1.CustomerReferenceEditable}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DateCreated" Value="{{$HIDDEN1.DateCreated}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsPrivate" Value="{{$HIDDEN1.IsPrivate}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberVisible" Value="{{$HIDDEN1.ClientMatterNumberVisible}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberRequired" Value="{{$HIDDEN1.ClientMatterNumberRequired}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RestrictedAccessStatus" Value="{{$HIDDEN1.RestrictedAccessStatus}}" RecordedValue="Optional" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Id" Value="{{$HIDDEN1.Id}}" RecordedValue="d7c768b3-2e4c-4b84-b745-18eb3700c897" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.FirstName" Value="{{$HIDDEN1.CreatedBy.FirstName}}" RecordedValue="User1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.LastName" Value="{{$HIDDEN1.CreatedBy.LastName}}" RecordedValue="Org1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Email" Value="{{$HIDDEN1.CreatedBy.Email}}" RecordedValue="admin.milan.papulic@gowi.rs" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Guid" Value="{{$HIDDEN1.CreatedBy.Guid}}" RecordedValue="1234dca9-c19a-4454-80de-f9d66c1b9a99" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.GroupList.SelectedGroupIds" Value="{{$HIDDEN1.CreatedBy.GroupList.SelectedGroupIds}}" RecordedValue="System.String[]" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionStatus.Id" Value="{{$HIDDEN1.SubmissionStatus.Id}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeId" Value="{{$HIDDEN1.SubmissionTypeId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeTitle" Value="{{$HIDDEN1.SubmissionTypeTitle}}" RecordedValue="MR01" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeTitleLong" Value="{{$HIDDEN1.SubmissionTypeTitleLong}}" RecordedValue="MR01 - Particulars of a charge" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="FileKey" Value="{{$HIDDEN1.FileKey}}" RecordedValue="99999c14-06da-4b77-aed8-27082c34269f" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UseTestEnvironment" Value="{{$HIDDEN1.UseTestEnvironment}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedByInformationOnSubmitToCH" Value="{{$HIDDEN1.CertifiedByInformationOnSubmitToCH}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.IsPdfLimit" Value="{{$HIDDEN1.CreatedBy.Organization.IsPdfLimit}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.AccountManagerEmail" Value="{{$HIDDEN1.CreatedBy.Organization.AccountManagerEmail}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.YesStatement" Value="{{$HIDDEN1.CreatedBy.Organization.YesStatement}}" RecordedValue="YES PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.NoStatement" Value="{{$HIDDEN1.CreatedBy.Organization.NoStatement}}" RecordedValue="NO PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SearchPost" Value="{{$HIDDEN1.SearchPost}}" RecordedValue="/Submission/CompanySearch" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CompanyTypeCode" Value="{{CompanyTypeCode}}" RecordedValue="EW" CorrelationBinding="{{FormPostParam31.CompanyTypeCode}}" UrlEncode="True" />
+        <FormPostParameter Name="CompanyNumber" Value="{{CompanyNumber}}" RecordedValue="05092124" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CompanyFullName" Value="{{CompanyFullName}}" RecordedValue="MILAN LIMITED, UNIT 5-6, 388 GREEN STREET, LONDON, E13 9AP" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateDay" Value="{{ChargeDateDay}}" RecordedValue="10" CorrelationBinding="{{FormPostParam32.ChargeCreationDateDay}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateMonth" Value="{{ChargeDateMonth}}" RecordedValue="03" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateYear" Value="{{ChargeDateYear}}" RecordedValue="2017" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDate" Value="{{$HIDDEN1.ChargeCreationDate}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName1" Value="{{ChargeName1}}" RecordedValue="TEST NAME ONE" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName2" Value="{{ChargeName2}}" RecordedValue="TEST NAME TWO" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName3" Value="{{ChargeName3}}" RecordedValue="TEST NAME THREE" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName4" Value="{{ChargeName4}}" RecordedValue="TEST NAME FOUR" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AdditionalCharges" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam24.AdditionalCharges}}" UrlEncode="True" />
+        <FormPostParameter Name="AdditionalCharges" Value="{{$HIDDEN1.AdditionalCharges}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Description" Value="{{Description}}" RecordedValue="TEST DESCRIPTION" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IncludeFixedCharge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam25.IncludeFixedCharge}}" UrlEncode="True" />
+        <FormPostParameter Name="FloatingCharge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam26.FloatingCharge}}" UrlEncode="True" />
+        <FormPostParameter Name="FloatingChargeComplete" Value="{{$HIDDEN1.FloatingChargeComplete}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsNegativePledge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam27.IsNegativePledge}}" UrlEncode="True" />
+        <FormPostParameter Name="IsTrusteeStatement" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam28.IsTrusteeStatement}}" UrlEncode="True" />
+        <FileUploadParameter Name="files" FileName="" ContentType="application/octet-stream" GenerateUniqueName="True" UseGuids="False" FileUploadName="" HtmlEncodeFileName="True" />
+        <FileUploadParameter Name="files" FileName="" ContentType="application/octet-stream" GenerateUniqueName="True" UseGuids="False" FileUploadName="" HtmlEncodeFileName="True" />
+        <FormPostParameter Name="UploadErrorNotificator" Value="{{$HIDDEN1.UploadErrorNotificator}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertificationYesStatementLabel" Value="{{$HIDDEN1.CertificationYesStatementLabel}}" RecordedValue="YES PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertificationNoStatementLabel" Value="{{$HIDDEN1.CertificationNoStatementLabel}}" RecordedValue="NO PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsPartOfDeedReducted" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam29.IsPartOfDeedReducted}}" UrlEncode="True" />
+        <FormPostParameter Name="Statement" Value="NO PART" RecordedValue="NO PART" CorrelationBinding="{{FormPostParam33.Statement}}" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedBy" Value="TEST CERTIFIED BY " RecordedValue="TEST CERTIFIED BY " CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsMr01OrMr02" Value="{{$HIDDEN1.IsMr01OrMr02}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeId" Value="{{$HIDDEN1.SubmissionTypeId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DisplayThreeIdQuestionsOnly" Value="{{$HIDDEN1.DisplayThreeIdQuestionsOnly}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion1" Value="TEL" RecordedValue="TEL" CorrelationBinding="{{FormPostParam34.AuthQuestion1}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer1" Value="123" RecordedValue="123" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion2" Value="BIRTOWN" RecordedValue="BIRTOWN" CorrelationBinding="{{FormPostParam35.AuthQuestion2}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer2" Value="ABC" RecordedValue="ABC" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion3" Value="EYE" RecordedValue="EYE" CorrelationBinding="{{FormPostParam36.AuthQuestion3}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer3" Value="DEF" RecordedValue="DEF" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="abc7f9b8-6d77-416b-8df1-4ff22dd39ae6" Version="1.1" Url="{{WebServer1}}/Mr01/Edit/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Create?typeId=1" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam37.Title" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Title" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam38.CompanyNumber" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="CompanyNumber" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam39.CompanyFullName" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="CompanyFullName" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam40.ChargeCreationDateDay" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ChargeCreationDateDay" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam41.ChargeCreationDateMonth" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ChargeCreationDateMonth" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam42.ChargeCreationDateYear" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ChargeCreationDateYear" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam43.ChargeName1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ChargeName1" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam44.ChargeName2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ChargeName2" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam45.ChargeName3" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ChargeName3" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam46.ChargeName4" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ChargeName4" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam47.AdditionalCharges" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="AdditionalCharges" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam48.IncludeFixedCharge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IncludeFixedChargeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam49.FloatingCharge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="FloatingChargeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam50.IsNegativePledge" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsNegativePledgeFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam51.IsTrusteeStatement" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsTrusteeStatementFalse" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam52.IsPartOfDeedReducted" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="IsPartOfDeedReductedNo" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam53.CertifiedBy" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="CertifiedBy" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam54.AuthAnswer1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="AuthAnswer1" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam55.AuthAnswer2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="AuthAnswer2" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam56.AuthAnswer3" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="AuthAnswer3" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam57.submit" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ype=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; cla" />
+            <RuleParameter Name="Index" Value="13" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam58.CompanyTypeCode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Eng" />
+            <RuleParameter Name="Index" Value="37" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam59.Statement" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="34" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam60.AuthQuestion1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Tel" />
+            <RuleParameter Name="Index" Value="99" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam61.AuthQuestion2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Pla" />
+            <RuleParameter Name="Index" Value="98" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam62.AuthQuestion3" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Eye" />
+            <RuleParameter Name="Index" Value="103" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="typeId" Value="1" RecordedValue="1" CorrelationBinding="{{QueryStringParam44.typeId}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="60abbdab-226e-44e5-9d5a-178e9f21980b" Version="1.1" Url="{{WebServer1}}/Mr01/Edit/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Edit/{{SubmissionGUID}}?typeId=1" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Title" Value="{{SubmissionTitle}}" RecordedValue="TEST-CLONE" CorrelationBinding="{{FormPostParam37.Title}}" UrlEncode="True" />
+        <FormPostParameter Name="isDesignatedApprover" Value="{{$HIDDEN1.isDesignatedApprover}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="isCurrentUserCreator" Value="{{$HIDDEN1.isCurrentUserCreator}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="submissionStatusId" Value="{{$HIDDEN1.submissionStatusId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CanApprove" Value="{{$HIDDEN1.CanApprove}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="submit" Value="submit" RecordedValue="submit" CorrelationBinding="{{FormPostParam57.submit}}" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberP1" Value="{{$HIDDEN1.ClientMatterNumberP1}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberP2" Value="{{$HIDDEN1.ClientMatterNumberP2}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CustomerReferenceEditable" Value="{{$HIDDEN1.CustomerReferenceEditable}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DateCreated" Value="{{$HIDDEN1.DateCreated}}" RecordedValue="17/03/2017 00:00:00" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsPrivate" Value="{{$HIDDEN1.IsPrivate}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberVisible" Value="{{$HIDDEN1.ClientMatterNumberVisible}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ClientMatterNumberRequired" Value="{{$HIDDEN1.ClientMatterNumberRequired}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RestrictedAccessStatus" Value="{{$HIDDEN1.RestrictedAccessStatus}}" RecordedValue="Optional" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Id" Value="{{$HIDDEN1.Id}}" RecordedValue="d7c768b3-2e4c-4b84-b745-18eb3700c897" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.FirstName" Value="{{$HIDDEN1.CreatedBy.FirstName}}" RecordedValue="User1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.LastName" Value="{{$HIDDEN1.CreatedBy.LastName}}" RecordedValue="Org1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Email" Value="{{$HIDDEN1.CreatedBy.Email}}" RecordedValue="admin.milan.papulic@gowi.rs" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Guid" Value="{{$HIDDEN1.CreatedBy.Guid}}" RecordedValue="1234dca9-c19a-4454-80de-f9d66c1b9a99" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.GroupList.SelectedGroupIds" Value="{{$HIDDEN1.CreatedBy.GroupList.SelectedGroupIds}}" RecordedValue="System.String[]" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionStatus.Id" Value="{{$HIDDEN1.SubmissionStatus.Id}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeId" Value="{{$HIDDEN1.SubmissionTypeId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeTitle" Value="{{$HIDDEN1.SubmissionTypeTitle}}" RecordedValue="MR01" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeTitleLong" Value="{{$HIDDEN1.SubmissionTypeTitleLong}}" RecordedValue="MR01 - Particulars of a charge" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="FileKey" Value="{{$HIDDEN1.FileKey}}" RecordedValue="99999c14-06da-4b77-aed8-27082c34269f" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UseTestEnvironment" Value="{{$HIDDEN1.UseTestEnvironment}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedByInformationOnSubmitToCH" Value="{{$HIDDEN1.CertifiedByInformationOnSubmitToCH}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.IsPdfLimit" Value="{{$HIDDEN1.CreatedBy.Organization.IsPdfLimit}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.AccountManagerEmail" Value="{{$HIDDEN1.CreatedBy.Organization.AccountManagerEmail}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.YesStatement" Value="{{$HIDDEN1.CreatedBy.Organization.YesStatement}}" RecordedValue="YES PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedBy.Organization.NoStatement" Value="{{$HIDDEN1.CreatedBy.Organization.NoStatement}}" RecordedValue="NO PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SearchPost" Value="{{$HIDDEN1.SearchPost}}" RecordedValue="/Submission/CompanySearch" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CompanyTypeCode" Value="{{CompanyTypeCode}}" RecordedValue="EW" CorrelationBinding="{{FormPostParam58.CompanyTypeCode}}" UrlEncode="True" />
+        <FormPostParameter Name="CompanyNumber" Value="{{CompanyNumber}}" RecordedValue="05092124" CorrelationBinding="{{FormPostParam38.CompanyNumber}}" UrlEncode="True" />
+        <FormPostParameter Name="CompanyFullName" Value="{{CompanyFullName}}" RecordedValue="MILAN LIMITED, UNIT 5-6, 388 GREEN STREET, LONDON, E13 9AP" CorrelationBinding="{{FormPostParam39.CompanyFullName}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateDay" Value="10" RecordedValue="10" CorrelationBinding="{{FormPostParam40.ChargeCreationDateDay}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateMonth" Value="3" RecordedValue="3" CorrelationBinding="{{FormPostParam41.ChargeCreationDateMonth}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDateYear" Value="2017" RecordedValue="2017" CorrelationBinding="{{FormPostParam42.ChargeCreationDateYear}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeCreationDate" Value="{{$HIDDEN1.ChargeCreationDate}}" RecordedValue="10/03/2017 00:00:00" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName1" Value="{{ChargeName1}}" RecordedValue="TEST NAME ONE" CorrelationBinding="{{FormPostParam43.ChargeName1}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName2" Value="{{ChargeName2}}" RecordedValue="TEST NAME TWO" CorrelationBinding="{{FormPostParam44.ChargeName2}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName3" Value="{{ChargeName3}}" RecordedValue="TEST NAME THREE" CorrelationBinding="{{FormPostParam45.ChargeName3}}" UrlEncode="True" />
+        <FormPostParameter Name="ChargeName4" Value="{{ChargeName4}}" RecordedValue="TEST NAME FOUR" CorrelationBinding="{{FormPostParam46.ChargeName4}}" UrlEncode="True" />
+        <FormPostParameter Name="AdditionalCharges" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam47.AdditionalCharges}}" UrlEncode="True" />
+        <FormPostParameter Name="AdditionalCharges" Value="{{$HIDDEN1.AdditionalCharges}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Description" Value="{{Description}}" RecordedValue="TEST DESCRIPTION" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IncludeFixedCharge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam48.IncludeFixedCharge}}" UrlEncode="True" />
+        <FormPostParameter Name="FloatingCharge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam49.FloatingCharge}}" UrlEncode="True" />
+        <FormPostParameter Name="FloatingChargeComplete" Value="{{$HIDDEN1.FloatingChargeComplete}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsNegativePledge" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam50.IsNegativePledge}}" UrlEncode="True" />
+        <FormPostParameter Name="IsTrusteeStatement" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam51.IsTrusteeStatement}}" UrlEncode="True" />
+        <FileUploadParameter Name="files" FileName="" ContentType="application/octet-stream" GenerateUniqueName="True" UseGuids="False" FileUploadName="" HtmlEncodeFileName="True" />
+        <FileUploadParameter Name="files" FileName="" ContentType="application/octet-stream" GenerateUniqueName="True" UseGuids="False" FileUploadName="" HtmlEncodeFileName="True" />
+        <FormPostParameter Name="UploadErrorNotificator" Value="{{$HIDDEN1.UploadErrorNotificator}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertificationYesStatementLabel" Value="{{$HIDDEN1.CertificationYesStatementLabel}}" RecordedValue="YES PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CertificationNoStatementLabel" Value="{{$HIDDEN1.CertificationNoStatementLabel}}" RecordedValue="NO PART" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsPartOfDeedReducted" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam52.IsPartOfDeedReducted}}" UrlEncode="True" />
+        <FormPostParameter Name="Statement" Value="NO PART" RecordedValue="NO PART" CorrelationBinding="{{FormPostParam59.Statement}}" UrlEncode="True" />
+        <FormPostParameter Name="CertifiedBy" Value="TEST CERTIFIED BY " RecordedValue="TEST CERTIFIED BY " CorrelationBinding="{{FormPostParam53.CertifiedBy}}" UrlEncode="True" />
+        <FormPostParameter Name="IsMr01OrMr02" Value="{{$HIDDEN1.IsMr01OrMr02}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SubmissionTypeId" Value="{{$HIDDEN1.SubmissionTypeId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DisplayThreeIdQuestionsOnly" Value="{{$HIDDEN1.DisplayThreeIdQuestionsOnly}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion1" Value="TEL" RecordedValue="TEL" CorrelationBinding="{{FormPostParam60.AuthQuestion1}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer1" Value="123" RecordedValue="123" CorrelationBinding="{{FormPostParam54.AuthAnswer1}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion2" Value="BIRTOWN" RecordedValue="BIRTOWN" CorrelationBinding="{{FormPostParam61.AuthQuestion2}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer2" Value="ABC" RecordedValue="ABC" CorrelationBinding="{{FormPostParam55.AuthAnswer2}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthQuestion3" Value="EYE" RecordedValue="EYE" CorrelationBinding="{{FormPostParam62.AuthQuestion3}}" UrlEncode="True" />
+        <FormPostParameter Name="AuthAnswer3" Value="DEF" RecordedValue="DEF" CorrelationBinding="{{FormPostParam56.AuthAnswer3}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="5a6cd5b3-a2a7-4efb-a18d-cad31d450dc9" Version="1.1" Url="{{WebServer1}}/Submission/Details/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr01/Details/{{SubmissionGUID}}?typeId=1" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Edit/{{SubmissionGUID}}?typeId=1" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="5ab2be85-c738-4c16-af95-ac2f70035dcc" Version="1.1" Url="{{WebServer1}}/MR01/DuplicateMR01/{{SubmissionGUID}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Mr01/Edit/{{SubmissionGUID}}?typeId=1" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Details/{{SubmissionGUID}}?typeId=1" />
+      </Headers>
+      <ValidationRules>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="{{ChargeName1}}" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="{{ChargeName2}}" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="{{ChargeName3}}" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="{{CompanyTypeCode}}" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="{{CompanyFullName}}" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="{{Description}}" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="{{ChargeName4}}" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+      </ValidationRules>
+    </Request>
+    <Request Method="GET" Guid="d13f4b40-35f1-4080-89fe-3ffaabd8305b" Version="1.1" Url="{{WebServer1}}/Account/Logout" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Mr01/Edit/eddda267-caba-47b8-bb42-44d037a4f979?typeId=1" />
+      </Headers>
+    </Request>
+  </Items>
+  <ContextParameters>
+    <ContextParameter Name="CompanyNumber" Value="05092124" />
+    <ContextParameter Name="WebServer1" Value="http://oyezgateway.test.gowi.rs" />
+    <ContextParameter Name="CompanyTypeCode" Value="EW" />
+    <ContextParameter Name="CompanyFullName" Value="MILAN LIMITED, UNIT 5-6, 388 GREEN STREET, LONDON, E13 9AP" />
+    <ContextParameter Name="ChargeDateDay" Value="" />
+    <ContextParameter Name="ChargeDateMonth" Value="" />
+    <ContextParameter Name="ChargeDateYear" Value="" />
+    <ContextParameter Name="ChargeName1" Value="TEST NAME ONE" />
+    <ContextParameter Name="ChargeName2" Value="TEST NAME TWO" />
+    <ContextParameter Name="ChargeName3" Value="TEST NAME THREE" />
+    <ContextParameter Name="ChargeName4" Value="TEST NAME FOUR" />
+    <ContextParameter Name="Description" Value="TEST DESCRIPTION" />
+  </ContextParameters>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

@@ -83,6 +83,9 @@
     <None Include="FileActionExporttoPDF LLMR04.webtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="LoadTest1.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="MyDashboard-Regession Test.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -177,6 +180,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="AdministrationReliant.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="FileActionDuplicate.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="UploadedFile\getting_started_with_testcomplete %281%29.pdf" />
+    <None Include="UploadedFile\getting_started_with_testcomplete %282%29.pdf" />
+    <None Include="SubmissionDetailpageSubmissionHistory.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="File ActionCancel.webtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

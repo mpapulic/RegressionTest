@@ -7,7 +7,7 @@ namespace PluginLibrary
 {
     [DisplayName("Extract Value From Column In Table Teams")]
     [Description("Grabs a ID value from team table.")]
-    public class ExtractTeamEdit : ExtractionRule
+    public class TeamEditExtractPlugin : ExtractionRule
     {
 
         [DisplayName("Team name ")]
