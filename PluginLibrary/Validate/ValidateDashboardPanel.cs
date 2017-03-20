@@ -8,7 +8,7 @@ using System.IO;
 
 namespace PluginLibrary.Validate
 {
-    public class MyDashboardCheckPanelData : ValidationRule
+    public class ValidateDashboardPanel : ValidationRule
     {
         private string table_name;
         public string TableName

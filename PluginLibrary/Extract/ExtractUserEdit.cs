@@ -39,7 +39,7 @@ namespace PluginLibrary
             string textJson = e.Response.BodyString;
             string userMail = e.WebTest.Context["newUserMail"].ToString() ;
             System.IO.File.WriteAllText(@"C:\Temp\TestGrabValue.txt", "Usao u GrabValue i pozivam GetUserByMail"+ "JSON kao text:" + textJson + "/r a trazi se mail:" + UserMail);
-            string userGUID = UsersProcessing.GetUserByMail(textJson, UserMail);
+            string userGUID = GetUserID.GetUserByMail(textJson, UserMail);
             System.IO.File.WriteAllText(@"C:\Temp\TestGrabValueIzlaz.txt", "Izlaz iz GrabValue i  GetUserByMail vratio:" + userGUID);
 
 

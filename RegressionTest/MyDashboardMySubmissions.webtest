@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WebTest Name="WebTest1" Id="00436a6b-aa07-4f37-b6ad-80f66b5923ff" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.13103ed3-94d3-47fa-80b6-ff64f1f7b5fe.rec.webtestresult" ResultsLocale="">
+<WebTest Name="MyDashboardMySubmissions" Id="00436a6b-aa07-4f37-b6ad-80f66b5923ff" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.13103ed3-94d3-47fa-80b6-ff64f1f7b5fe.rec.webtestresult" ResultsLocale="">
   <Items>
     <Request Method="GET" Guid="7643b911-fa99-4757-b9d9-d2a129f6f1e5" Version="1.1" Url="http://oyezgateway.test.gowi.rs/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://oyezgateway.test.gowi.rs/Account/Login" ReportingName="Home" IgnoreHttpStatusCode="False">
       <ExtractionRules>
@@ -228,7 +228,7 @@
         <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Admin/Report" />
       </Headers>
       <ExtractionRules>
-        <ExtractionRule Classname="PluginLibrary.SubmissionsExtractGlobalSubmissionListPlugin, PluginLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" VariableName="Test" DisplayName="Extract all submissions from GLOBAL SUBMISSION LIST" Description="Grabs a ALL values from the  GLOBAL SUBMISSION LIST." />
+        <ExtractionRule Classname="PluginLibrary.ExtractGlobalSubmissionListHTMLdoc, PluginLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" VariableName="GLSsubmissionsHTMLdoc" DisplayName="Extract GLOBAL SUBMISSION LIST html document" Description="Grabs a GLOBAL SUBMISSION LIST html document for the later processing." />
       </ExtractionRules>
     </Request>
     <Request Method="GET" Guid="e805d0fd-e399-4655-8984-323ec4cd6280" Version="1.1" Url="http://oyezgateway.test.gowi.rs/Dashboard/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="My Dashboard" IgnoreHttpStatusCode="False">
@@ -236,7 +236,7 @@
         <Header Name="Referer" Value="http://oyezgateway.test.gowi.rs/Submission/Index" />
       </Headers>
       <ValidationRules>
-        <ValidationRule Classname="PluginLibrary.Validate.MyDashboardCheckPanelData, PluginLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DisplayName="MyDashboardCheckPanelData" Description="" Level="High" ExectuionOrder="BeforeDependents">
+        <ValidationRule Classname="PluginLibrary.Validate.ValidateDashboardPanel, PluginLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DisplayName="ValidateDashboardPanel" Description="" Level="High" ExectuionOrder="BeforeDependents">
           <RuleParameters>
             <RuleParameter Name="TableName" Value="0 table" />
           </RuleParameters>

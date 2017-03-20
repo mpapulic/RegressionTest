@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace PluginLibrary.Models
 {
-    public static class UsersProcessing
+    public static class GetUserID
     {
         public static string GetUserByMail(string textJSON, string usermail)
         {

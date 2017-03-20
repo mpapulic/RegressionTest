@@ -69,8 +69,8 @@
     <Compile Include="Helper\GetValuesFromPDF_LLMR04.cs" />
     <Compile Include="Helper\KnownFolders.cs" />
     <Compile Include="Helper\Logger.cs" />
-    <Compile Include="Helper\TeamsProcessing.cs" />
-    <Compile Include="Helper\UsersProcessing.cs" />
+    <Compile Include="Helper\GetTeamID.cs" />
+    <Compile Include="Helper\GetUserID.cs" />
     <Compile Include="Models\Submission.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
@@ -78,7 +78,7 @@
     <Compile Include="Extract\ExtractTeamEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extract\ExtractUserEdit.cs" />
-    <Compile Include="Validate\MyDashboardCheckPanelData.cs" />
+    <Compile Include="Validate\ValidateDashboardPanel.cs" />
     <Compile Include="Validate\ValidateFormFieldExists.cs" />
     <Compile Include="Validate\ValidatePDF_LLMR04.cs" />
     <Compile Include="Validate\ValidatePlugin.cs" />

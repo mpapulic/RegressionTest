@@ -37,7 +37,7 @@ namespace PluginLibrary
             doc.LoadHtml(e.Response.BodyString);
 
 
-            TeamID = TeamsProcessing.GetTeamByName(doc, TeamName);
+            TeamID = GetTeamID.GetTeamByName(doc, TeamName);
             //System.IO.File.WriteAllText(@"C:\Temp\TestPARAMETRI.txt", $"Team name: {TeamName}  team ID : {TeamID} .");
             //e.WebTest.Context.Add(ContextParameterName, "Pretraga se vrsi za:" + TeamName);
             //e.WebTest.Context.Add(ContextParameterName, "Odabrani team WEBTEST 002 ima ID:" + TeamID);

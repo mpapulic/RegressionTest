@@ -223,14 +223,6 @@
       <Headers>
         <Header Name="Referer" Value="{{WebServer1}}/Mr01/Create" />
       </Headers>
-      <RequestPlugins>
-        <RequestPlugin Classname="PluginLibrary.ChargeDatePlugin, PluginLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DisplayName="ChargeDatePlugin" Description="">
-          <RuleParameters>
-            <RuleParameter Name="ParameterName" Value="" />
-            <RuleParameter Name="daysInPast" Value="14" />
-          </RuleParameters>
-        </RequestPlugin>
-      </RequestPlugins>
       <FormPostHttpBody>
         <FormPostParameter Name="Title" Value="{{SubmissionTitle}}" RecordedValue="TEST-URGENT001" CorrelationBinding="" UrlEncode="True" />
         <FormPostParameter Name="isDesignatedApprover" Value="True" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />

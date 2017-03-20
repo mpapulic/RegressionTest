@@ -5,7 +5,7 @@ using PluginLibrary.Models;
 
 namespace PluginLibrary.Helper
 {
-    public static class TeamsProcessing
+    public static class GetTeamID
     {
         public static string GetTeamByName(HtmlDocument doc, string teamname )
         {

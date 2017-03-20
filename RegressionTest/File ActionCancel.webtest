@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WebTest Name="WebTest1" Id="45564136-25aa-42d8-a457-61b25b84e7e6" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.5d9c2fa5-0abf-4607-96d6-988c2a043d1b.rec.webtestresult" ResultsLocale="">
+<WebTest Name="File ActionCancel" Id="45564136-25aa-42d8-a457-61b25b84e7e6" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.5d9c2fa5-0abf-4607-96d6-988c2a043d1b.rec.webtestresult" ResultsLocale="">
   <Items>
     <Request Method="GET" Guid="d5535070-360f-4372-975e-f96265e58e25" Version="1.1" Url="{{WebServer1}}/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Account/Login" ReportingName="" IgnoreHttpStatusCode="False">
       <ExtractionRules>
@@ -166,7 +166,7 @@
           <Headers>
             <Header Name="Accept" Value="*/*" />
             <Header Name="X-Requested-With" Value="XMLHttpRequest" />
-            <Header Name="Referer" Value="{{WebServer1}}/Mr04/Edit/4700250e-ad19-4c4e-9460-5c589362a7dc?typeId=2" />
+            <Header Name="Referer" Value="{{WebServer1}}/Mr04/Edit/{{SubmissionGUID}}?typeId=2" />
           </Headers>
           <FormPostHttpBody>
             <FormPostParameter Name="companyNo" Value="05292202" RecordedValue="05292202" CorrelationBinding="{{FormPostParam6.companyNo}}" UrlEncode="True" />

@@ -6,7 +6,7 @@ using PluginLibrary.Models;
 namespace PluginLibrary
 {
     [DisplayName("Extract GLOBAL SUBMISSION LIST html document")]
-    [Description("Grabs a GLOBAL SUBMISSION LIST html document for the lter processing.")]
+    [Description("Grabs a GLOBAL SUBMISSION LIST html document for the later processing.")]
     public class ExtractGlobalSubmissionListHTMLdoc : ExtractionRule
     {
         public List<Submission> GLSsubmissions = new List<Submission>();

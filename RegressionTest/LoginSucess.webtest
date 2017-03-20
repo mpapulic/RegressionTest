@@ -94,8 +94,8 @@
       </ExtractionRules>
       <FormPostHttpBody>
         <FormPostParameter Name="ReturnUrl" Value="{{$HIDDEN1.ReturnUrl}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
-        <FormPostParameter Name="UserName" Value="user2.org1.milan.papulic@gowi.rs" RecordedValue="user2.org1.milan.papulic@gowi.rs" CorrelationBinding="" UrlEncode="True" />
-        <FormPostParameter Name="Password" Value="Password7#" RecordedValue="Password7#" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UserName" Value="admin.milan.papulic@gowi.rs" RecordedValue="user2.org1.milan.papulic@gowi.rs" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="password" RecordedValue="Password7#" CorrelationBinding="" UrlEncode="True" />
       </FormPostHttpBody>
     </Request>
   </Items>
@@ -103,7 +103,6 @@
     <ContextParameter Name="WebServer1" Value="http://oyezgateway.test.gowi.rs" />
   </ContextParameters>
   <ValidationRules>
-    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
     <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
       <RuleParameters>
         <RuleParameter Name="Tolerance" Value="0" />

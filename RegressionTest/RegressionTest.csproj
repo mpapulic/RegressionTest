@@ -83,7 +83,7 @@
     <None Include="FileActionExporttoPDF LLMR04.webtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="LoadTest1.loadtest">
+    <None Include="REGRESSION_TEST.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="MyDashboard-Regession Test.loadtest">
